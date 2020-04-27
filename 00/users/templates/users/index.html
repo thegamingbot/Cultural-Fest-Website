@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+  <html lang="en" class=" -webkit-">
+  <head>
+
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Fest2021</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href= "{% static 'css/logo.css' %}">
+      <link rel="stylesheet" href="{% static 'css/background.css' %}">
+      <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+      <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+      <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+          @font-face {
+            font-family: TSA;
+            src: local('../static/fonts/TSA'),
+                 url('../static/fonts/TSA.ttf') format("truetype");
+          }
+
+          @font-face {
+            font-family: Alternity;
+            src: local('Alternity'),
+                 url('../static/fonts/Alternity.ttf') format("truetype");
+          }
+
+          @font-face {
+            font-family: Chopsic;
+            src: local('Chopsic'),
+                 url('../static/fonts/Chopsic.ttf') format("truetype");
+          }
+
+          @font-face {
+            font-family: Alternity;
+            src: local('Alternity'),
+                 url('../static/fonts/Alternity.ttf') format("truetype");
+          }
+
+          @font-face {
+            font-family: Chalkduster;
+            src: local('Chalkduster'),
+                 url('../static/fonts/Chalkduster.ttf') format("truetype");
+          }
+      </style>
+  </head>
+
+  <body>
+    <body translate="no">
+        <canvas width="1862" height="982"></canvas>
+        <canvas width="1862" height="982"></canvas>
+    <!-- partial -->
+        <script  src="{% static 'js/background.js' %}"></script>
+  <a href="../">
+    <div class="circles">
+      <div></div>
+      <div></div>
+      <div></div>
+      <span></span>
+
+    </div>
+
+      <div class="text">SHADOW</div>
+      <pre>        </pre>
+  </a>
+
+    <style>
+          p {
+            position: absolute;
+            text-align: center;
+            font-size: 55px;
+            margin-top: 30%;
+            left: 25.5%;
+            font-family: ha;
+            font-weight: bolder;
+            padding:10%;
+            z-index: 3;
+            right: 25%;
+          }
+      </style>
+      </head>
+      <body>
+
+      <p id="demo"></p>
+
+      <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Feb 29, 2020 19:38:25").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + " days  " + hours + "h  "
+        + minutes + "m  " + seconds + "s   "+ "Left!";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "Hurray!!!";
+        }
+      }, 1000);
+      </script>
+
+      <div class="image2">
+        <img style="width:90%;height:60%;" src="{% static 'images/bg3.png' %}">
+      </div>
+
+      <div class="image">
+        <img style="width:401%;height:102%;" src="{% static 'images/bg2.png' %}">
+      </div>
+
+      <div class="hero1">
+          <img style="width:100%;" src="{% static 'images/hero1.png' %}">
+      </div>
+
+      <div class="hero2">
+          <img style="width:50%;" src="{% static 'images/hero2.png' %}">
+      </div>
+
+      <div class="hero3">
+          <img style="width:75%;" src="{% static 'images/hero3.png' %}">
+      </div>
+
+      <div class="hero4">
+          <img style="width:150%;" src="{% static 'images/hero4.png' %}">
+      </div>
+
+      <div class="bgh">
+        <img style="width:110%;" src="{% static 'images/10.png' %}">
+      </div>
+
+      <div class="bgh2">
+        <img style="width:250%;" src="{% static 'images/3.png' %}">
+      </div>
+
+      <div class="btm">
+        <img style="width:155%;" src="{% static 'images/btm.png' %}">
+      </div>
+
+      <div id="menu">
+      <ul>
+        <li><a href="accomodation.html">ACCOMMODATION</a></li>
+        <li><a href="register.html">REGISTER</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="schedule.html">SCHEDULE</a></li>
+        <li><a href="sponsors.html">SPONSORS</a></li>
+        <li><a href ="contact_us.html">CONTACT US</a></li>
+      </ul>
+      </div>
+
+      <p class="bottom">
+        <a href="index.html">HOME</a><br><br>
+        <a href="accomodation.html">ACCOMMODATION</a><br><br>
+        <a href="register.html">REGISTER</a><br><br>
+        <a href="events.html">EVENTS</a><br><br>
+        <a href="sponsors.html">SPONSORS</a><br>
+      </p>
+
+
+      <p class="social">CONNECT WITH : </p>
+
+          <a href="http://www.facebook.com" class="fa fa-facebook"></a>
+          <a href="http://www.twitter.com" class="fa fa-twitter"></a>
+          <a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
+          <a href="http://www.youtube.com" class="fa fa-youtube"></a>
+          <a href="http://www.instagram.com" class="fa fa-instagram"></a>
+
+      <div class="aboutus">
+        <p><u><font size="32" face="Bitsumishi" color="#00f9ff">DESCRIPTION</font></u><br><br>
+        <font size="6" face="georgia">The web application that will be implemented is the registration of a user in our cultural fest "SHADOW" and also selection of the events of his/ her choice and add them to a cart and generate a pass.<br>
+          Firstly, the user will have to register themselves in the "Register" webpage by providing their personal information after which he/ she can select the events from the "Events" webpage and add them to a cart, where they will recieve the sub total. <br><br>The relations or tables used for storing the user input and the cost of the events will be as follows: <br><br>
+        Personal information: (First Name, Last name, Gender, Email ID, Password, College Name, Phone Number)<br>
+        Events Selected: (Email ID, Event ID)<br>
+        All Events: (Event ID, Event Name, Event Cost, Event Catagory)
+      </font>
+      </p>
+      </div>
+
+      <div class="bg100">
+        <img style="width:110%;height:60%;" src="{% static 'images/bg100.png' %}">
+      </div>
+      <a href="#" id="scroll" style="display: none;"><span></span></a>
+      <script>
+      $(document).ready(function(){
+          $(window).scroll(function(){
+              if ($(this).scrollTop() > 100) {
+                  $('#scroll').fadeIn();
+              } else {
+                  $('#scroll').fadeOut();
+              }
+          });
+          $('#scroll').click(function(){
+              $("html, body").animate({ scrollTop: 0 }, 600);
+              return false;
+          });
+      });
+      </script>
+  </body>
+</html>

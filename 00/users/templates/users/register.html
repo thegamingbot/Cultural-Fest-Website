@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class=" -webkit-">
+	<head>
+
+		{% load static %}
+
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Register</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href= "{% static 'css/logo.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+		<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+		<meta name="apple-mobile-web-app-title" content="CodePen">
+		<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+		<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+		<title>CodePen - SignUp / SignIn</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+
+	        @font-face {
+	          font-family: TSA;
+	          src: local('../static/fonts/TSA'),
+	               url('../static/fonts/TSA.ttf') format("truetype");
+	        }
+
+            @font-face {
+              font-family: Alternity;
+              src: local('Alternity'),
+                   url('../static/fonts/Alternity.ttf') format("truetype");
+            }
+
+			@font-face {
+			  font-family: Motor;
+			  src: local('../static/fonts/Motor'),
+			       url('../static/fonts/Motor.ttf') format("truetype");
+			}
+
+			@font-face {
+			  font-family: Cassandra;
+			  src: local('../static/fonts/Cassandra'),
+			       url('../static/fonts/Cassandra.ttf') format("truetype");
+			}
+
+			@font-face {
+			  font-family: Bronx;
+			  src: local('../static/fonts/Bronx'),
+			       url('../static/fonts/Bronx.ttf') format("truetype");
+			}
+
+			@font-face {
+			  font-family: Smilen;
+			  src: local('../static/fonts/Smilen'),
+			       url('../static/fonts/Smilen.ttf') format("truetype");
+			}
+
+			@font-face {
+				font-family: Toxia;
+			  src: local('../static/fonts/Toxia'),
+			       url('../static/fonts/Toxia.ttf') format("truetype");
+			}
+		</style>
+	</head>
+
+    <body translate="no">
+        <canvas width="1862" height="982"></canvas>
+        <canvas width="1862" height="982"></canvas>
+    <!-- partial -->
+
+
+		<div id="menu">
+			<ul>
+				<li><a href="../accomodation.html">ACCOMMODATION</a></li>
+				<li><a href="../register.html">REGISTER</a></li>
+				<li><a href="../events.html">EVENTS</a></li>
+				<li><a href="../schedule.html">SCHEDULE</a></li>
+				<li><a href="../sponsors.html">SPONSORS</a></li>
+				<li><a href="../contact_us.html">CONTACT US</a></li>
+			</ul>
+		</div>
+
+		<a href="../">
+		<div class="circles">
+			<div></div>
+			<div></div>
+			<div></div>
+			<span></span>
+
+		</div>
+			<div class="text">SHADOW</div>
+			<pre>        </pre>
+		</a>
+
+		<div class="container">
+			<div class="signup">
+				<br><br>
+				<h1 class="heading-1">HEY<br>THERE!</h1>
+				<br><br><br><br>
+				<h2 class="heading-2">Don 't have an account?</h2>
+				<button class="btn btn-warning" id="signup">Sign Up</button>
+			</div>
+			<div class="login">
+				<br><br>
+				<h1 class="heading-1">HEY<br>WELCOME!</h1>
+				<br><br><br><br>
+				<h2 class="heading-2">Have an account?</h2>
+				<button class="btn btn-warning" id="login">Log in</button>
+			</div>
+		</div>
+		<div class="form-container"></div>
+		<div class="signup__form">
+			<form method="POST">
+				<h2 class="heading-2--form">Sign Up</h2>
+				<div class="input">
+					<input type="text" placeholder="Full Name">
+				</div>
+				<div class="input">
+					<input type="email" placeholder="E-Mail">
+				</div>
+				<div class="input">
+					<input type="password" placeholder="Password">
+				</div>
+				<div class="input">
+					<input type="phone" placeholder="Phone No.">
+				</div>
+				<div class="input">
+					<input type="college" placeholder="College Name">
+				</div>
+				<div class="login__box">
+					<button class="btn btn-danger" value="sign_up">Sign Up</button>
+				</div>
+			</form>
+		</div>
+		<div class="login__form">
+			<form method="POST">
+				<h2 class="heading-2--form">Log In</h2>
+				<div class="input">
+					<input type="email" placeholder="E-Mail">
+				</div>
+				<div class="input">
+					<input type="password" placeholder="Password">
+				</div>
+				<div class="login__box">
+					<button class="btn btn-danger" value="log_in">Log In</button>
+				</div>
+			</form>
+		</div>
+
+        <div class="border">
+        	<img style="width:100%;height:180%;" src="{% static 'images/bg5.png' %}">
+        </div>
+
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <script>
+			$(document).ready(function(){
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 100) {
+						$('#scroll').fadeIn();
+					} else {
+						$('#scroll').fadeOut();
+					}
+				});
+				$('#scroll').click(function(){
+					$("html, body").animate({ scrollTop: 0 }, 600);
+					return false;
+				});
+			});
+        </script>
+
+        <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        <script id="rendered-js">
+			$("#login").click(function () {
+			$(".signup__form,.signup").addClass("in");
+			$(".login__form,.login").addClass("in");
+			$(".form-container").addClass("in");
+			});
+
+			$("#signup").click(function () {
+			$(".login__form,.login").removeClass("in");
+			$(".signup__form,.signup").removeClass("in");
+			$(".form-container").removeClass("in");
+			});
+
+			$(document).ready(function() {
+$('.mdb-select').materialSelect();
+});
+		</script>
+
+  </body>
+</html>

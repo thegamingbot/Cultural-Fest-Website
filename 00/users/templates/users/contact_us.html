@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class=" -webkit-">
+  <head>
+
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Contact Us</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+     <link rel="stylesheet" href= "{% static 'css/logo.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/contact_us.css' %}">
+     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+     <style>
+         @import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+
+         @font-face {
+           font-family: VampireWars;
+           src: local('../static/fonts/VampireWars'),
+                url('../static/fonts/VampireWars.ttf') format("truetype");
+         }
+
+         @font-face {
+           font-family: TSA;
+           src: local('../static/fonts/TSA'),
+                url('../static/fonts/TSA.ttf') format("truetype");
+         }
+
+         @font-face {
+           font-family: Alternity;
+           src: local('Alternity'),
+                url('../static/fonts/Alternity.ttf') format("truetype");
+         }
+     </style>
+
+  </head>
+  <body>
+    <body translate="no">
+        <canvas width="1862" height="982"></canvas>
+        <canvas width="1862" height="982"></canvas>
+    <!-- partial -->
+
+<h1>Contact Us</h1>
+
+<div id="menu">
+<ul>
+  <li><a href="../accomodation.html">ACCOMMODATION</a></li>
+  <li><a href="../register.html">REGISTER</a></li>
+  <li><a href="../events.html">EVENTS</a></li>
+  <li><a href="../schedule.html">SCHEDULE</a></li>
+  <li><a href="../sponsors.html">SPONSORS</a></li>
+  <li><a href="../contact_us.html">CONTACT US</a></li>
+</ul>
+</div>
+
+<a href="../">
+  <div class="circles">
+    <div></div>
+    <div></div>
+    <div></div>
+    <span></span>
+
+  </div>
+
+    <div class="text">SHADOW</div>
+    <pre>        </pre>
+</a>
+
+<div class="kaushik">
+   <img style="width:50%;height:100%;" src="{% static 'images/kaushik.png' %}">
+</div>
+
+<div class="mridul">
+   <img style="width:85%;height:100%;" src="{% static 'images/mridul.png' %}">
+</div>
+
+<div class="nikunj">
+    <img style="width:55%;height:100%;" src="{% static 'images/nikunj.png' %}">
+</div>
+
+<div class="samarth">
+    <img style="width:90%;height:100%;" src="{% static 'images/samarth.png' %}">
+</div>
+
+<div class="vinayak">
+    <img style="width:55%;height:100%;" src="{% static 'images/vinayak.png' %}">
+</div>
+
+<div class="border">
+  <img style="width:100%;height:180%;" src="{% static 'images/bg4.png' %}">
+</div>
+
+<div class="contactus1">
+  <p><font size="32" face="Bitsumishi" color="brown"> Sai Kaushik, CED18I044</font><br><br>
+    <font size="6">“The secret of success is to do the common thing uncommonly well.”</font><br><br></p>
+</div>
+
+<div class="contactus2">
+  <p><font size="32" face="Bitsumishi" color="brown">	 Mridul Harish, CED18I034</font><br><br>
+    <font size="6">“The way to get started is to quit talking and begin doing.”</font><br><br></p>
+</div>
+
+<div class="contactus3">
+  <p><font size="32" face="Bitsumishi" color="brown">	Nikunj Maheshwari, CED18I038</font><br><br>
+    <font size="6">“Do not go where the path may lead,<br> go instead where there is no
+     path and leave a trail.”</font><br><br></p>
+</div>
+
+<div class="contactus4">
+  <p><font size="32" face="Bitsumishi" color="brown">	Samarth Inamdar, CED18I045</font><br><br>
+    <font size="6">“The only impossible journey is the one you never begin.”</font><br><br></p>
+</div>
+
+<div class="contactus5">
+  <p><font size="32" face="Bitsumishi" color="brown"> Vinayak Sethi, COE18B061</font><br><br>
+    <font size="6">“Tell me and I forget, teach me and I remember,<br> involve me and I learn.”</font><br><br></p>
+</div>
+
+<a href="#" id="scroll" style="display: none;"><span></span></a>
+<script>
+$(document).ready(function(){
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('#scroll').fadeIn();
+        } else {
+            $('#scroll').fadeOut();
+        }
+    });
+    $('#scroll').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
+});
+</script>
+
+
+  </body>
+</html>

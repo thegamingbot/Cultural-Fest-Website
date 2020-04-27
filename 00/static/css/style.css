@@ -1,0 +1,396 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* Main Content */
+
+#menu{
+  background-size: cover;
+  right: 0.5%;
+  top: 10%;
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: Alternity;
+  font-size: 20px;
+
+  width: 75.8%;
+  z-index: 3;
+}
+
+div#menu{
+  position: absolute;
+  z-index: 4;
+}
+
+body{
+  background-repeat: repeat-y;
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+ul {
+  border-radius: 25px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+li{
+  float: left;
+}
+
+li a{
+  display: block;
+  color : #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 125%;
+}
+
+li a:hover{
+  background-image: linear-gradient(to right ,#1a2a6c,#b21f1f,#fdbb2d);
+}
+
+.image{
+  position: absolute;
+  height: 500%;
+  top: -7.1%;
+  left: -0.7%;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.image2{
+  position: absolute;
+  height: 290%;
+  top: 190%;
+  left: 10%;
+  opacity: 1.25;
+  z-index: 1;
+}
+
+.hero1{
+  position: absolute;
+  top: -35%;
+  left: 25%;
+  opacity: 1;
+  z-index: 3;
+}
+
+.hero2{
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  opacity: 1;
+  z-index: 3;
+}
+
+.hero3{
+  position: absolute;
+  top: 10%;
+  left: -15%;
+  opacity: 1;
+  z-index: 3;
+}
+
+.hero4{
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  opacity: 1;
+  z-index: 3;
+}
+
+.bgh{
+  position: absolute;
+  top: 40%;
+  left: 12.5%;
+  opacity: 0.72;
+  z-index: 2;
+}
+
+.bgh2{
+  position: absolute;
+  top: 5%;
+  left: -5%;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.btm{
+  position: absolute;
+  bottom:-402%;
+  left: -24%;
+  opacity: 2;
+  z-index: 2;
+}
+
+.bottom{
+  position: absolute;
+  border-radius: 25px;
+  list-style-type: none;
+  display: block;
+  color: white;
+  bottom: -385%;
+  left: 1%;
+  opacity: 1;
+  z-index: 5;
+  font-family: Chopsic;
+  font-size: 225%;
+  display: block;
+  padding: 14px 16px;
+  background-size: cover;
+}
+
+.bottom a:link, a:visited {
+  position: absolute;
+  background-color: #000000;
+  color: white;
+  text-align: left;
+  padding: 14px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom a:hover, a:active {
+  background-image: linear-gradient(to right ,#c04848, #480048);
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover{
+  background-image: linear-gradient(to right ,#3e5151, #decba4);
+}
+
+.fa:hover {
+    opacity: 1;
+}
+
+.fa-facebook {
+  position: absolute;
+  bottom: -390%;
+  right: 30%;
+  z-index: 5;
+  background-color: #3B5998;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.fa-twitter {
+  position: absolute;
+  bottom: -390%;
+  right: 25%;
+  z-index: 5;
+  background-color: #55ACEE;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.fa-linkedin {
+  position: absolute;
+  bottom: -390%;
+  right: 20%;
+  z-index: 5;
+  background-color: #007bb5;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.fa-youtube {
+  position: absolute;
+  bottom: -390%;
+  right: 15%;
+  z-index: 5;
+  background-color: #bb0000;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.fa-instagram {
+  position: absolute;
+  bottom: -390%;
+  right: 10%;
+  z-index: 5;
+  background-color: #125688;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.social{
+  position: absolute;
+  font-size: 150%;
+  top:390%;
+  right: -30%;
+  z-index: 5;
+  color: white;
+  font-family: Chopsic;
+}
+
+.aboutus{
+  position: absolute;
+  top: 0%;
+  left: -70%;
+  width: 240%;
+  color:white;
+  z-index: 2;
+}
+
+.bg100 {
+  position: absolute;
+  top: 200%;
+  left: 13%;
+  height: 250%;
+  opacity: 0.68;
+}
+
+#scroll {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color: black;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px;
+    z-index: 5;
+}
+
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color:#ffffff;
+}
+
+#scroll:hover {
+    background-color:#555;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
+}

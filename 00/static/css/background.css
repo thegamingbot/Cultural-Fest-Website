@@ -1,0 +1,26 @@
+html {
+  height:350%;
+  overflow-y: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+  background: #020202;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
+}
+body {
+  height: 350%;
+  overflow-y: hidden;
+  margin: 0%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+canvas {
+  height: 500%;
+  overflow-y: hidden;
+  position: absolute;
+  width: 100%;
+}
