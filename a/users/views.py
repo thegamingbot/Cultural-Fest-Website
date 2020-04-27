@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.http import HttpResponse
 from django.template import Context, loader
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
@@ -19,7 +20,13 @@ def events(request):
     return render(request, "users/events.html")
 
 def register(request):
-    return render(request, "users/register.html")
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserCreationForm()
+    return render(request, "users/register.html", {"form":form})
 
 def schedule(request):
     return render(request, "users/schedule.html")

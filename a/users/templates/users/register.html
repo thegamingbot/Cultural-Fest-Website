@@ -3,6 +3,7 @@
 	<head>
 
 		{% load static %}
+		{% load crispy_forms_tags %}
 
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -118,7 +119,7 @@
 		<div class="signup__form">
 			<form method="POST">
 				<h2 class="heading-2--form">Sign Up</h2>
-				<div class="input">
+				<!-- <div class="input">
 					<input type="text" placeholder="Full Name">
 				</div>
 				<div class="input">
@@ -132,7 +133,9 @@
 				</div>
 				<div class="input">
 					<input type="college" placeholder="College Name">
-				</div>
+				</div> -->
+				{% csrf_token %}
+				{{form|crispy}}
 				<div class="login__box">
 					<button class="btn btn-danger" value="sign_up">Sign Up</button>
 				</div>

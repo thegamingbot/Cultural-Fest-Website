@@ -13,7 +13,7 @@ urlpatterns = [
     path("register.html/", views.register, name="register()"),
     path("schedule.html/", views.schedule, name="schedule()"),
     path("sponsors.html/", views.sponsors, name="sponsors()"),
-    path("index.html/", views.index, name="index()")
+    path("index.html/", views.index, name="index()"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
