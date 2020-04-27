@@ -7,13 +7,13 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index()"),
-    path("accomodation.html/", views.accomodation, name="accomodation()"),
-    path("contact_us.html/", views.contact_us, name="contact_us()"),
-    path("events.html/", views.events, name="events()"),
-    path("register.html/", views.register, name="register()"),
-    path("schedule.html/", views.schedule, name="schedule()"),
-    path("sponsors.html/", views.sponsors, name="sponsors()"),
-    path("index.html/", views.index, name="index()"),
+    path("accomodation/", views.accomodation, name="accomodation()"),
+    path("contact_us/", views.contact_us, name="contact_us()"),
+    path("events/", views.events, name="events()"),
+    path("register/", views.register, name="register()"),
+    path("schedule/", views.schedule, name="schedule()"),
+    path("sponsors/", views.sponsors, name="sponsors()"),
+    path("index/", views.index, name="index()"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

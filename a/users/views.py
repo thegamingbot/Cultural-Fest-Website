@@ -24,8 +24,7 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-    else:
-        form = RegisterForm()
+    form = RegisterForm()
     return render(request, "users/register.html", {"form":form})
 
 def schedule(request):
