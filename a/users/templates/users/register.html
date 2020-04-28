@@ -135,32 +135,43 @@
 					<input type="college" placeholder="College Name">
 				</div> -->
 				{% csrf_token %}
-				{{form|crispy}}
+				{{form1|crispy}}
 				<div class="login__box">
-					<button class="btn btn-danger" value="sign_up">Sign Up</button>
+					<button class="btn btn-danger" name="sign_up">Sign Up</button>
 				</div>
 			</form>
 		</div>
 		<div class="login__form">
-			<form method="POST">
+			<form method="POST" class="form-group">
 				<h2 class="heading-2--form">Log In</h2>
-				<div class="input">
+				<!-- <div class="input">
 					<input type="email" placeholder="E-Mail">
 				</div>
 				<div class="input">
 					<input type="password" placeholder="Password">
-				</div>
+				</div> -->
+				{% csrf_token %}
+				{{form2|crispy}}
 				<div class="login__box">
-					<button class="btn btn-danger" value="log_in">Log In</button>
+					<button class="btn btn-danger" name="log_in">Log In</button>
 				</div>
 			</form>
 		</div>
 
         <div class="border">
         	<img style="width:100%;height:180%;" src="{% static 'images/bg5.png' %}">
-        </div>
+		</div>
 
-        <a href="#" id="scroll" style="display: none;"><span></span></a>
+		{% if messages %}
+			{% for message in messages %}
+				{% if message.tags %}
+					<script>alert("{{ message }}")</script> 
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+
+		<a href="#" id="scroll" style="display: none;"><span></span></a>
+		
         <script>
 			$(document).ready(function(){
 				$(window).scroll(function(){
@@ -193,8 +204,8 @@
 			});
 
 			$(document).ready(function() {
-$('.mdb-select').materialSelect();
-});
+				$('.mdb-select').materialSelect();
+			});
 		</script>
 
   </body>
