@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponse
 from django.template import Context, loader
@@ -37,8 +37,7 @@ def register(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return render(request, "users/index.html")
+                return redirect('../')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
