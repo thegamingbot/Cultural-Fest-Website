@@ -1,11 +1,12 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
 from .forms import RegisterForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -37,7 +38,7 @@ def register(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('../')
+                return HttpResponseRedirect(reverse("user", args=(username,)))
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -50,3 +51,10 @@ def schedule(request):
 
 def sponsors(request):
     return render(request, "users/sponsors.html")
+
+def user(request, username):
+    user = User.objects.get(username = username)
+    context = {
+        "user":user
+    }
+    return render(request, "users/user.html", context)
