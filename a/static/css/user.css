@@ -1,0 +1,23 @@
+body{
+    background-color: whitesmoke;
+  }
+  
+html{
+    height: 200%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+}
+
+.border{
+    position: absolute;
+    height: 300%;
+    width: 100.5%;
+    top: -7.1%;
+    left: -0.5%;
+    opacity: 0.75;
+    z-index: 1;
+  }

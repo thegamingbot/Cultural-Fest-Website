@@ -38,7 +38,8 @@ def register(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse("user", args=(username,)))
+                user = User.objects.get(username = username)
+                return HttpResponseRedirect(reverse("user", args=(username, user.id)))
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -52,7 +53,7 @@ def schedule(request):
 def sponsors(request):
     return render(request, "users/sponsors.html")
 
-def user(request, username):
+def user(request, username, id):
     user = User.objects.get(username = username)
     context = {
         "user":user

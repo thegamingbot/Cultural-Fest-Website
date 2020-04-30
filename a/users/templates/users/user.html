@@ -3,11 +3,30 @@
     <head>
         <title>{{user.username}}</title>
         {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}">
+
+        <style>
+            @font-face {
+                font-family: TSA;
+                src: local('../static/fonts/TSA'),
+                    url('../static/fonts/TSA.ttf') format("truetype");
+            }
+        </style>
     </head>
     <body>
         <div class="border">
-            <img style="width:100%;height:180%;" src="{% static 'images/user.png' %}">
+            <img style="width:100%;height:180%;" src="{% static 'images/bg13.png' %}">
         </div>
-        <h1>Hi {{user.first_name}}</h1>
+
+        <div class="circles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <span></span>
+        </div>
+
+        <h1 style="position:absolute; z-index: 2; left: 50%; top: 50%;">Hi {{user.first_name}} {{user.id}}</h1>
     </body>
 </html>

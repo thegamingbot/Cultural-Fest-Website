@@ -24,11 +24,11 @@
   }
 
   .circles {
+    position: absolute;
     left: 2%;
     top: 0.5%;
     width: 25vmin;
     height: 25vmin;
-    position: relative;
     -webkit-perspective: 50000px;
           perspective: 50000px;
     color: #b2aaaa;
