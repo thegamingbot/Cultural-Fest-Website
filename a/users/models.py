@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Events(models.Model):
@@ -8,3 +9,8 @@ class Events(models.Model):
 
     def __str__(self):
         return f"ID: {self.ID}   Name: {self.Name}   Cost: {self.Cost}"
+
+class SelectedEvents(models.Model):
+    Name = models.ForeignKey(User, on_delete=models.CASCADE)
+    Events = models.ManyToManyField(Events, blank=True)
+
