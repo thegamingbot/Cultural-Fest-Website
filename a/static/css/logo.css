@@ -4,8 +4,8 @@
 
  .text {
     font-family: TSA;
-    position: relative;
-    top: 1%;
+    position: absolute;
+    top: 40%;
     left: 3%;
     display: block;
     text-align: center;
