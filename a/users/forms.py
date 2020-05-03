@@ -20,7 +20,6 @@ class RegisterForm (UserCreationForm):
         super(RegisterForm, self).__init__(*args, **kwargs)
 
         for fieldname in ['first_name', 'last_name','email', 'username', "password1", "password2", 'college']:
-            self.fields[fieldname].help_text = None
             self.fields[fieldname].label = ''
 
         self.fields['username'].widget.attrs['placeholder'] = 'Username'
