@@ -1,198 +1,207 @@
 <!DOCTYPE html>
 <html lang="en" class=" -webkit-">
-  <head>
+	<head>
+		{% load static %}
 
-    {% load static %}
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Events</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-     <link rel="stylesheet" href= "{% static 'css/logo.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
-     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-     <style>
-         @import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+		<title>Events</title>
 
-         @font-face {
-           font-family: VampireWars;
-           src: local('../static/fonts/VampireWars'),
-                url('../static/fonts/VampireWars.ttf') format("truetype");
-         }
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href= "{% static 'css/logo.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
 
-         @font-face {
-           font-family: Chopsic;
-           src: local('../static/fonts/Chopsic'),
-                url('../static/fonts/Chopsic.ttf') format("truetype");
-         }
+			@font-face {
+			font-family: VampireWars;
+			src: local('../static/fonts/VampireWars'),
+				url('../static/fonts/VampireWars.ttf') format("truetype");
+			}
 
-         @font-face {
-           font-family: Billabong;
-           src: local('../static/fonts/Billabong'),
-                url('../static/fonts/Billabong.ttf') format("truetype");
-         }
+			@font-face {
+			font-family: Chopsic;
+			src: local('../static/fonts/Chopsic'),
+				url('../static/fonts/Chopsic.ttf') format("truetype");
+			}
 
-         @font-face {
-           font-family: TSA;
-           src: local('../static/fonts/TSA'),
-                url('../static/fonts/TSA.ttf') format("truetype");
-         }
+			@font-face {
+			font-family: Billabong;
+			src: local('../static/fonts/Billabong'),
+				url('../static/fonts/Billabong.ttf') format("truetype");
+			}
 
-         @font-face {
-           font-family: Alternity;
-           src: local('Alternity'),
-                url('../static/fonts/Alternity.ttf') format("truetype");
-         }
-     </style>
+			@font-face {
+			font-family: TSA;
+			src: local('../static/fonts/TSA'),
+				url('../static/fonts/TSA.ttf') format("truetype");
+			}
 
-  </head>
-  <body>
-    <body translate="no">
-        <canvas width="1862" height="982"></canvas>
-        <canvas width="1862" height="982"></canvas>
-    <!-- partial -->
+			@font-face {
+			font-family: Alternity;
+			src: local('Alternity'),
+				url('../static/fonts/Alternity.ttf') format("truetype");
+			}
+		</style>
 
-<h1>Events</h1>
+	</head>
+	<body>
+		<body translate="no">
+			<canvas width="1862" height="982"></canvas>
+			<canvas width="1862" height="982"></canvas>
+		<!-- partial -->
 
-    <div id="menu">
-    <ul>
-      <li><a href="../accomodation">ACCOMMODATION</a></li>
-      <li><a href="../register">REGISTER</a></li>
-      <li><a href="../events">EVENTS</a></li>
-      <li><a href="../schedule">SCHEDULE</a></li>
-      <li><a href="../sponsors">SPONSORS</a></li>
-      <li><a href="../contact_us">CONTACT US</a></li>
-    </ul>
-    </div>
+		<h1>Events</h1>
 
-    <a href="../">
-      <div class="circles">
-        <div></div>
-        <div></div>
-        <div></div>
-        <span></span>
+		<div id="menu">
+		<ul>
+			<li><a href="../accomodation">ACCOMMODATION</a></li>
+			<li><a href="../register">REGISTER</a></li>
+			<li><a href="../events">EVENTS</a></li>
+			<li><a href="../schedule">SCHEDULE</a></li>
+			<li><a href="../sponsors">SPONSORS</a></li>
+			<li><a href="../contact_us">CONTACT US</a></li>
+		</ul>
+		</div>
 
-      </div>
+		<a href="../">
+			<div class="circles">
+			<div></div>
+			<div></div>
+			<div></div>
+			<span></span>
 
-        <div class="text">SHADOW</div>
-        <pre>        </pre>
-    </a>
+			</div>
 
-          <div class="border">
-            <img style="width:100%;height:180%;" src="{% static 'images/bg6.png' %}">
-          </div>
+			<div class="text">SHADOW</div>
+			<pre>        </pre>
+		</a>
 
-          <div class="Gaming" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/12.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Gaming </span></button>
-            <div class="content">
-              <p><br>CS GO Tournament : Battle it out in the hottest fps game in colleges today to
-  become the ultimate team by defeating all. “Prizes worth 60k”<br><br>
-  FIFA Tournament : Go head to head in the ultimate test of skill, technique and
-  tactics trying to outplay and outclass your opponent for the quest to be called ‘El Campeon’.
-  “Prizes worth 25k”<br><br>
-  PUBG – Dive in to the number one mobile battle royal game and fight it out with 25 other
-  teams to take home the ‘The Chicken Dinner’. “Prizes worth 15k”</p>
-            </div>
-          </div>
-          <div class="Drama" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/Drama.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Drama </span></button>
-            <div class="content">
-              <p><br>Impromptu Showdown : Get a random scenario and act your heart out in this
-  exciting spontaneous event. “Prizes worth 5k”<br><br>
-  Mayasrishti : Impress the judges and audience alike with your acting and directing
-  skills through a 10 minute play. “Prizes worth 20k”<br><br>
-  Open Mic : Act, Sing, Monologue, Mime the mic is all yours in this event. “Prizes worth
-  1k”</p>
-            </div>
-          </div>
-          <div class="Literature" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/Literature.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Literature </span></button>
-            <div class="content">
-              <p><br>Kavyanjali : Show off your Hindi poetry skills and battle it off with other poets in this
-  gathering of epic proportions. “Prizes worth 3k”<br><br>
-  The Prompt Game : Write an essay, poem, story or any other thing you wish based
-  on the prompts given on the screen. Even your imagination is not the limit here. “Prizes
-  worth 5k”<br><br>
-  City Hall Debate : It is a battle of words and wits in this debate competition. Unleash
-  your inner Arnab Goswami on your opponents. “Prizes worth 2k”</p>
-</div>
-          </div>
-          <div class="Quiz" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/Quiz.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Quiz </span></button>
-            <div class="content">
-              <p><br>Meme Quiz : Scrolling Instagram finally has its pay off as you compete in this meme
-  quiz. “Prizes worth 1k”<br><br>
-  Ultimate Quiz : Go full Derek O Brian in this quiz about Sports, Art, Literature, Film
-  and events from all around the world. “Prizes worth 2.5k”</p>
-            </div>
-          </div>
-          <div class="Photography" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/Photo.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Photography </span></button>
-            <div class="content">
-              <p><br>Photon : Capture the essence of IIITDM Kancheepuram in this event where you try to
-  outclick all other competitors. “Prizes worth 2k”</p>
-  </div>
-          </div>
-          <div class="Dance" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/Dance.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Dance </span></button>
-            <div class="content">
-              <p><br>Dance Off : Put on your dance shoes and groove to the beat in this energetic rhythmic
-  competition. “Prizes worth 7k”</p>
-            </div>
-          </div>
-          <div class="Music" style="width:30%">
-            <img style="width:80%;" src="{% static 'images/Music.png' %}">
-            <button class="button" style="vertical-align:middle"><span>Music </span></button>
-            <div class="content">
-              <p><br>IIITDM Idol : Reach the highest tone possible and let your inner idol shine through.
-  “Prizes worth 7k”<br><br>
-  Battle of Bands : "Get ready for the ultimate battle of supremacy amongst the best bands in the town
-  as they amaze you, enthral you and completely baffle with their amazing performances that'll keep you humming to their tunes till the next day. Prizes worth 10k"</p>
-            </div>
-          </div>
+		<div class="border">
+			<img style="width:100%;height:180%;" src="{% static 'images/bg6.png' %}">
+		</div>
 
-          <div class="Gaming1">
-            <img style="width:25%;" src="{% static 'images/Gaming.png' %}">
-          </div>
+		<div class="Gaming" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/12.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Gaming </span></button>
+			<div class="content">
+				<p><br>CS GO Tournament : Battle it out in the hottest fps game in colleges today to
+				become the ultimate team by defeating all. “Prizes worth 60k”<br><br>
+				FIFA Tournament : Go head to head in the ultimate test of skill, technique and
+				tactics trying to outplay and outclass your opponent for the quest to be called ‘El Campeon’.
+				“Prizes worth 25k”<br><br>
+				PUBG – Dive in to the number one mobile battle royal game and fight it out with 25 other
+				teams to take home the ‘The Chicken Dinner’. “Prizes worth 15k”</p>
+			</div>
+		</div>
 
-          <a href="#" id="scroll" style="display: none;"><span></span></a>
+		<div class="Drama" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/Drama.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Drama </span></button>
+			<div class="content">
+				<p><br>Impromptu Showdown : Get a random scenario and act your heart out in this
+				exciting spontaneous event. “Prizes worth 5k”<br><br>
+				Mayasrishti : Impress the judges and audience alike with your acting and directing
+				skills through a 10 minute play. “Prizes worth 20k”<br><br>
+				Open Mic : Act, Sing, Monologue, Mime the mic is all yours in this event. “Prizes worth
+				1k”</p>
+			</div>
+		</div>
 
-          <script>
-          var coll = document.getElementsByClassName("button");
-          var i;
+		<div class="Literature" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/Literature.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Literature </span></button>
+			<div class="content">
+				<p><br>Kavyanjali : Show off your Hindi poetry skills and battle it off with other poets in this
+				gathering of epic proportions. “Prizes worth 3k”<br><br>
+				The Prompt Game : Write an essay, poem, story or any other thing you wish based
+				on the prompts given on the screen. Even your imagination is not the limit here. “Prizes
+				worth 5k”<br><br>
+				City Hall Debate : It is a battle of words and wits in this debate competition. Unleash
+				your inner Arnab Goswami on your opponents. “Prizes worth 2k”</p>
+			</div>
+		</div>
 
-          for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-              this.classList.toggle("active");
-              var content = this.nextElementSibling;
-              if (content.style.display === "block") {
-                content.style.display = "none";
-              } else {
-                content.style.display = "block";
-              }
-            });
-          }
+		<div class="Quiz" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/Quiz.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Quiz </span></button>
+			<div class="content">
+				<p><br>Meme Quiz : Scrolling Instagram finally has its pay off as you compete in this meme
+				quiz. “Prizes worth 1k”<br><br>
+				Ultimate Quiz : Go full Derek O Brian in this quiz about Sports, Art, Literature, Film
+				and events from all around the world. “Prizes worth 2.5k”</p>
+			</div>
+		</div>
 
-          $(document).ready(function(){
-              $(window).scroll(function(){
-                  if ($(this).scrollTop() > 100) {
-                      $('#scroll').fadeIn();
-                  } else {
-                      $('#scroll').fadeOut();
-                  }
-              });
-              $('#scroll').click(function(){
-                  $("html, body").animate({ scrollTop: 0 }, 600);
-                  return false;
-              });
-          });
-          </script>
+		<div class="Photography" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/Photo.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Photography </span></button>
+			<div class="content">
+				<p><br>Photon : Capture the essence of IIITDM Kancheepuram in this event where you try to
+				outclick all other competitors. “Prizes worth 2k”</p>
+			</div>
+		</div>
 
-  </body>
+		<div class="Dance" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/Dance.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Dance </span></button>
+			<div class="content">
+				<p><br>Dance Off : Put on your dance shoes and groove to the beat in this energetic rhythmic
+				competition. “Prizes worth 7k”</p>
+			</div>
+		</div>
+
+		<div class="Music" style="width:30%">
+			<img style="width:80%;" src="{% static 'images/Music.png' %}">
+			<button class="button" style="vertical-align:middle"><span>Music </span></button>
+			<div class="content">
+				<p><br>IIITDM Idol : Reach the highest tone possible and let your inner idol shine through.
+				“Prizes worth 7k”<br><br>
+				Battle of Bands : "Get ready for the ultimate battle of supremacy amongst the best bands in the town
+				as they amaze you, enthral you and completely baffle with their amazing performances that'll keep you 
+				humming to their tunes till the next day. Prizes worth 10k"</p>
+			</div>
+		</div>
+
+		<div class="Gaming1">
+			<img style="width:25%;" src="{% static 'images/Gaming.png' %}">
+		</div>
+
+		<a href="#" id="scroll" style="display: none;"><span></span></a>
+
+		<script>
+			var coll = document.getElementsByClassName("button");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.display === "block") {
+				content.style.display = "none";
+				} else {
+				content.style.display = "block";
+				}
+			});
+			}
+
+			$(document).ready(function(){
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 100) {
+						$('#scroll').fadeIn();
+					} else {
+						$('#scroll').fadeOut();
+					}
+				});
+				$('#scroll').click(function(){
+					$("html, body").animate({ scrollTop: 0 }, 600);
+					return false;
+				});
+			});
+		</script>
+
+	</body>
+
 </html>

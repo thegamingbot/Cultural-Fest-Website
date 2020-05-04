@@ -1,13 +1,15 @@
+body{
+    background-color: whitesmoke;
+  }
+
+html{
+    height: 200%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 ::-webkit-scrollbar{
     width: 0px;
     background: transparent;
-}
-
-body{
-  background-repeat: repeat-y;
-  background-size: cover;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .border{
@@ -20,54 +22,55 @@ body{
     z-index: 1;
 }
 
-.container{
-    position: absolute;
-    top: 10%;
-    left: 20%;
-    z-index: 3;
-}
+* {box-sizing: border-box}
 
-.nav-tabs{
+.green {
     position: absolute;
+    top: 40%;
+    left: 50%;
+    border-radius: 0px 30px 30px 0px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 40%;
     z-index: 2;
 }
 
-.tab-content{
+.red {
     position: absolute;
+    left: 10%;
+    top: 40%;
+    border-radius: 30px 0px 0px 30px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 40%;
     z-index: 2;
 }
 
-#scroll {
-    position:fixed;
-    right:10px;
-    bottom:10px;
-    cursor:pointer;
-    width:50px;
-    height:50px;
-    background-color: black;
-    text-indent:-9999px;
-    display:none;
-    -webkit-border-radius:60px;
-    -moz-border-radius:60px;
-    border-radius:60px;
-    z-index: 5;
+.red:hover .green:hover{
+    background-color: #777;
 }
 
-#scroll span {
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-8px;
-    margin-top:-12px;
-    height:0;
-    width:0;
-    border:8px solid transparent;
-    border-bottom-color:#ffffff;
+.tabcontent {
+    position: absolute;
+    top: 48%;
+    left: 5%;
+    color: rgb(0, 0, 0);
+    display: none;
+    padding: 100px 20px;
+    height: 200%;
+    width: 90%;
+    z-index: 2;
 }
 
-#scroll:hover {
-    background-color:#555;
-    opacity:1;filter:"alpha(opacity=100)";
-    -ms-filter:"alpha(opacity=100)";
-}
-
+#Home {background-color: transparent;}
+#News {background-color: transparent;}

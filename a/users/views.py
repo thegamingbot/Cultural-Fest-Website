@@ -3,10 +3,11 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
-from .forms import RegisterForm
+from .forms import RegisterForm, EventForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from .models import Event, SelectedEvent
 
 # Create your views here.
 
@@ -54,8 +55,18 @@ def sponsors(request):
     return render(request, "users/sponsors.html")
 
 def user(request, username, id):
+    form = EventForm()
     user = User.objects.get(username = username)
+
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            x = form.save(commit=False)
+            x.Name = user
+            x.save()
+
     context = {
-        "user":user
+        "user":user,
+        "form":form,
     }
     return render(request, "users/user.html", context)

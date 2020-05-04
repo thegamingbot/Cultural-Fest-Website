@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from crispy_forms.bootstrap import Field
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
+from .models import SelectedEvent, Event
 
 class RegisterForm (UserCreationForm):
     first_name = forms.CharField(max_length=64, widget=forms.TextInput(attrs={'placeholder': 'First Name', 'autofocus': True}))
@@ -25,3 +26,15 @@ class RegisterForm (UserCreationForm):
         self.fields['username'].widget.attrs['placeholder'] = 'Username'
         self.fields['password1'].widget.attrs['placeholder'] = 'Password'
         self.fields['password2'].widget.attrs['placeholder'] = 'Password Confirmation'
+
+class EventForm(forms.ModelForm):
+    Events = forms.ModelMultipleChoiceField(
+                       widget = forms.CheckboxSelectMultiple,
+                       queryset = Event.objects.all()
+               )
+    class Meta: 
+        model = SelectedEvent
+        exclude = ['Name']
+        widgets = {
+            'Events': forms.CheckboxInput(attrs={'class': 'form-control', 'style': ''})
+        }

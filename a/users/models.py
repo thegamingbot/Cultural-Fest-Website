@@ -13,4 +13,4 @@ class Event(models.Model):
 class SelectedEvent(models.Model):
     Name = models.ForeignKey(User, on_delete=models.CASCADE)
     Events = models.ManyToManyField(Event, blank=True)
-
+    Accomodation = models.BooleanField()
