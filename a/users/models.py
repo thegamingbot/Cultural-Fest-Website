@@ -8,7 +8,7 @@ class Event(models.Model):
     Cost = models.IntegerField()
 
     def __str__(self):
-        return f"ID: {self.ID}   Name: {self.Name}   Cost: {self.Cost}"
+        return f"{self.Name}"
 
 class SelectedEvent(models.Model):
     Name = models.ForeignKey(User, on_delete=models.CASCADE)
