@@ -11,6 +11,9 @@ class Event(models.Model):
         return f"{self.Name}"
 
 class SelectedEvent(models.Model):
-    Name = models.ForeignKey(User, on_delete=models.CASCADE)
+    Name = models.CharField(primary_key=True, max_length = 64)
     Events = models.ManyToManyField(Event, blank=True)
     Accomodation = models.BooleanField()
+
+    def __str__(self):
+        return f"{self.Name}"

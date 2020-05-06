@@ -65,57 +65,10 @@
         </div>
 
         <div id="News" class="tabcontent">
-            <form method = POST>
+            <form method = POST enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="col-sm-12">
-                    <div class="quiz_content_area">
-                        <h1 class="quiz_title">Reason</h1>
-                
-                        <div class="col-sm-3">
-                            <div class="quiz_card_area">
-                                <input class="quiz_checkbox" type="checkbox" id="1" value="1" checked="checked" />
-                                <div class="single_quiz_card">
-                                    <div class="quiz_card_content">
-                                        <div class="quiz_card_icon">
-                                            <div class="quiz_icon quiz_icon1"></div>
-                                        </div>
-                
-                                        <div class="quiz_card_title">
-                                                <h3><i class="fa fa-check" aria-hidden="true"></i> {{form.Accomodation}}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <div class="row">
-                            {% for events in form.Events %}
-                                <div class="col-sm-3">
-                                    <div class="quiz_card_area">
-                                        <input class="quiz_checkbox" type="checkbox" id="2" value="2">
-                                        <div class="single_quiz_card">
-                                            <div class="quiz_card_content">
-                                                <div class="quiz_card_icon">
-                                                    <div class="quiz_icon quiz_icon1"></div>
-                                                </div>
-                
-                                                <div class="quiz_card_title">
-                                                        <h3><i class="fa fa-check" aria-hidden="true"></i> {{events}}</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                            <div class="col-sm-1 "          >
-                                <div class="quiz_next">
-                                    <button class="quiz_continueBtn">Continue</button>
-                                </div>
-                            </div>
-                
-                        </div>
-                    </div>
-                </div>
+                {{form|crispy}}
+                <button class="btn btn-success" name="submit">Submit</button>
             </form>
         </div>
 

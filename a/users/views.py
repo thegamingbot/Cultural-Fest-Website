@@ -57,16 +57,21 @@ def sponsors(request):
 def user(request, username, id):
     form = EventForm()
     user = User.objects.get(username = username)
+    try:
+        select = SelectedEvent.objects.get(Name=username)
+    except SelectedEvent.DoesNotExist:
+        select = None
 
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
             x = form.save(commit=False)
-            x.Name = user
+            x.Name = username
             x.save()
 
     context = {
         "user":user,
         "form":form,
+        "select":select,
     }
     return render(request, "users/user.html", context)

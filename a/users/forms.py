@@ -28,8 +28,13 @@ class RegisterForm (UserCreationForm):
         self.fields['password2'].widget.attrs['placeholder'] = 'Password Confirmation'
 
 class EventForm(forms.ModelForm):
-    Events = Event.objects.all()
-    
+    Events = forms.ModelMultipleChoiceField(
+                       widget = forms.CheckboxSelectMultiple,
+                       queryset = Event.objects.all()
+               )
     class Meta: 
         model = SelectedEvent
         exclude = ['Name']
+        widgets = {
+            'Events': forms.CheckboxInput(attrs={'class': 'form-control'})
+        }
