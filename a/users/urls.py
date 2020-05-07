@@ -14,7 +14,8 @@ urlpatterns = [
     path("schedule/", views.schedule, name="schedule()"),
     path("sponsors/", views.sponsors, name="sponsors()"),
     path("index/", views.index, name="index()"),
-    path("<username>/<id>", views.user, name="user"),
+    path("<username>/<int:id>", views.user, name="user"),
+    path("<username>/cart/", views.cart, name="cart"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

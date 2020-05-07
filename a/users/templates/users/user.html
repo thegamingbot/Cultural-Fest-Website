@@ -34,6 +34,24 @@
             src: local('../static/fonts/Billabong'),
                 url('../static/fonts/Billabong.ttf') format("truetype");
             }
+
+			@font-face {
+			  font-family: Isle;
+			  src: local('../static/fonts/Isle'),
+			       url('../static/fonts/Isle.ttf') format("truetype");
+			}
+
+            @font-face {
+            font-family: Avengeance;
+            src: local('../static/fonts/Avengeance'),
+                url('../static/fonts/Avengeance.ttf') format("truetype");
+            }
+            
+			@font-face {
+			font-family: VampireWars;
+			src: local('../static/fonts/VampireWars'),
+				url('../static/fonts/VampireWars.ttf') format("truetype");
+			}
         </style>
 
     </head>
@@ -44,7 +62,7 @@
             <img style="width:100%;height:180%;" src="{% static 'images/bg13.png' %}">
         </div>
 
-        <a href="../">
+        <a href="">
             <div class="circles">
                 <div></div>
                 <div></div>
@@ -55,20 +73,45 @@
         </a>
         
         <a href="#" id="scroll" style="display: none;"><span></span></a>
-        
-        <button class="red" onclick="openPage('Home', this)" id="defaultOpen">Home</button>
-        <button class="green" onclick="openPage('News', this)">News</button>
 
-        <div id="Home" class="tabcontent">
-            <h3>Home</h3>
-            <p>Home is where the heart is..</p>
+        <p class="Hi">Hi, {{user.username}}</p>
+        <a href="../" class="logout">Logout</a>
+        
+        <a href="cart" class="Cart">
+            <button class="btn btn-light"><p style="font-family: Chopsic; font-size: 20px;">CART</p></button>
+        </a>
+        
+        <button class="red" onclick="openPage('Registered_Events', this)" id="defaultOpen">Registered Events</button>
+        <button class="green" onclick="openPage('All_Events', this)">All Events</button>
+
+        <div id="Registered_Events" class="tabcontent">
+            <p class="x">Accomodation and Registered Events</p><br><br><br>
+            <div class="form">
+                <ul>
+                    {% for event in x %}
+                        <li>{{event}}</li>
+                        <br>
+                    {% empty %}
+                        <li>No events registered yet.</li>
+                    {% endfor %}
+                    {% if registered.Accomodation %}
+                        <br><br>
+                        <li>Name: Accomodation | Cost: 100</li>
+                    {% else %}
+                        <li></li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
 
-        <div id="News" class="tabcontent">
+        <div id="All_Events" class="tabcontent">
+            <p class="x">Accomodation and All Events</p><br><br><br>
             <form method = POST enctype="multipart/form-data">
                 {% csrf_token %}
-                {{form|crispy}}
-                <button class="btn btn-success" name="submit">Submit</button>
+                <div class="form">
+                    {{form|crispy}}
+                    <button class="btn btn-outline-dark" name="submit" style="position: relative;"><p style="font-size:x-large; font-family: Isle; color: black;">Add to cart</p></button>
+                </div>
             </form>
         </div>
 

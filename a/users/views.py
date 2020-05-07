@@ -7,7 +7,8 @@ from .forms import RegisterForm, EventForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from .models import Event, SelectedEvent
+from .models import Event, Cart, Registered, notRegistered
+from django.db.models import Sum
 
 # Create your views here.
 
@@ -29,7 +30,12 @@ def register(request):
     if request.method == "POST" and 'sign_up' in request.POST:
         form1 = RegisterForm(request.POST)
         if form1.is_valid():
+            username = form1.cleaned_data.get('username')
             form1.save()
+            x = Cart(Name=username, Accomodation=False)
+            x.save()
+            y = Registered(Name=username, Accomodation=False)
+            y.save()
             messages.success(request, 'Registered.. Voila!!')
     if request.method == "POST" and 'log_in' in request.POST:
         form2 = AuthenticationForm(request=request, data=request.POST)
@@ -55,23 +61,89 @@ def sponsors(request):
     return render(request, "users/sponsors.html")
 
 def user(request, username, id):
-    form = EventForm()
     user = User.objects.get(username = username)
+    registered = Registered.objects.get(Name=username)
     try:
-        select = SelectedEvent.objects.get(Name=username)
-    except SelectedEvent.DoesNotExist:
-        select = None
+        notregistered = notRegistered.objects.get(Name=username)
+    except notRegistered.DoesNotExist:
+        notregistered = notRegistered(Name=username, Accomodation=False)
+        notregistered.save()
+        r = Event.objects.all()
+        for event in r:
+            notregistered.Events.add(event)
+    x = registered.Events.all()
+    if user.id != id:
+        raise Http404("Please login through the Register page..")
+    event = Event.objects.all()
+    try:
+        cart = Cart.objects.get(Name=username)
+    except Cart.DoesNotExist:
+        cart = None
+    
+    form = EventForm(username, instance=cart)
 
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(username, request.POST, instance=cart)
         if form.is_valid():
-            x = form.save(commit=False)
-            x.Name = username
-            x.save()
+            form.save()
+            q = Cart.objects.filter(Name=username)
+            y = Registered.objects.get(Name=username)
+            y.Cart.set(q)
+            y.save()
 
     context = {
         "user":user,
+        "event":event,
         "form":form,
-        "select":select,
+        "cart":cart,
+        "x":x,
+        "registered":registered,
     }
     return render(request, "users/user.html", context)
+
+def cart(request, username):
+    user = User.objects.get(username = username)
+    try:
+        cart = Cart.objects.get(Name=username)
+        registered = Registered.objects.get(Name=username)
+    except Cart.DoesNotExist:
+        cart = None
+    except Registered.DoesNotExist:
+        registered = None
+
+    if request.method == 'POST':
+        x = cart.Events.all()
+        notregistered = notRegistered.objects.get(Name=username)
+        notregistered.delete()
+        notregistered = notRegistered(Name=username, Accomodation=False)
+        notregistered.save()
+        for event in x:
+            registered.Events.add(event)
+        if cart.Accomodation:
+            registered.Accomodation = True
+            registered.save()
+            notregistered.Accomodation=False
+            notregistered.save()
+        x = registered.Events.all()
+        y = Event.objects.all()
+        z = y.difference(x)
+        for event in z:
+            notregistered.Events.add(event)        
+    
+    x = 0
+    z = Cart.objects.get(Name=username)
+    y = z.Events.all()
+    for a in y:
+        x = x + a.Cost
+    
+    if z.Accomodation:
+        x = x + 100
+
+    context = {
+        "user":user,
+        "cart":cart,
+        "y":y,
+        "x":x,
+        "z":z
+    }
+    return render(request, "users/cart.html", context)
