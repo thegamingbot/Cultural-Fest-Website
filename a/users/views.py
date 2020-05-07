@@ -7,7 +7,10 @@ from .forms import RegisterForm, EventForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from .models import Event, SelectedEvent
+from .models import Event, Cart, Registered, notRegistered
+from django.views.generic import View
+from .utils import render_to_pdf
+from django.template.loader import get_template
 
 # Create your views here.
 
@@ -55,7 +58,6 @@ def sponsors(request):
     return render(request, "users/sponsors.html")
 
 def user(request, username, id):
-    form = EventForm()
     user = User.objects.get(username = username)
     registered = Registered.objects.get(Name=username)
     try:
@@ -71,9 +73,11 @@ def user(request, username, id):
         raise Http404("Please login through the Register page..")
     event = Event.objects.all()
     try:
-        select = SelectedEvent.objects.get(Name=username)
-    except SelectedEvent.DoesNotExist:
-        select = None
+        cart = Cart.objects.get(Name=username)
+    except Cart.DoesNotExist:
+        cart = None
+    
+    form = EventForm(username, instance=cart)
 
     if request.method == 'POST' and 'cart' in request.POST:
         return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
@@ -88,14 +92,14 @@ def user(request, username, id):
             y.save()
             messages.success(request, 'Items added to your cart. You are being redirected to the cart right now.')
             return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
-            x = form.save(commit=False)
-            x.Name = username
-            x.save()
 
     context = {
         "user":user,
+        "event":event,
         "form":form,
-        "select":select,
+        "cart":cart,
+        "x":x,
+        "registered":registered,
     }
     return render(request, "users/user.html", context)
 
@@ -152,10 +156,9 @@ def cart(request, username, id):
         "cart":cart,
         "y":y,
         "x":x,
-        "z":z
-from django.views.generic import View
-from .utils import render_to_pdf
-from django.template.loader import get_template
+        "z":z,
+    }
+    return render(request, "users/cart.html", context)
 
 def genrate_pdf(request, *args, **kwargs):
     template=get_template("pdf/bill.html")
