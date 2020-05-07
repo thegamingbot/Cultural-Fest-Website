@@ -15,6 +15,7 @@ urlpatterns = [
     path("sponsors/", views.sponsors, name="sponsors()"),
     path("index/", views.index, name="index()"),
     path("<username>/<id>", views.user, name="user"),
+    path("pdf/",views.genrate_pdf, name="pdf"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -75,3 +75,18 @@ def user(request, username, id):
         "select":select,
     }
     return render(request, "users/user.html", context)
+
+from django.views.generic import View
+from .utils import render_to_pdf
+from django.template.loader import get_template
+
+def genrate_pdf(request, *args, **kwargs):
+    template=get_template("pdf/bill.html")
+    context={
+    "invoice_id":123,
+    "customer_name":"Nikunj",
+    "amount":123,
+    }
+    html=template.render(context)
+    pdf=render_to_pdf("pdf/bill.html",context)
+    return HttpResponse(pdf,content_type="application/pdf")
