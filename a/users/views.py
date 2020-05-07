@@ -83,7 +83,7 @@ def user(request, username, id):
         return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
 
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(username, request.POST, instance=cart)
         if form.is_valid():
             form.save()
             q = Cart.objects.filter(Name=username)
