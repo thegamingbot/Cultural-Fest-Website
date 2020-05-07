@@ -7,8 +7,7 @@ from .forms import RegisterForm, EventForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from .models import Event, Cart, Registered, notRegistered
-from django.db.models import Sum
+from .models import Event, SelectedEvent
 
 # Create your views here.
 
@@ -30,12 +29,7 @@ def register(request):
     if request.method == "POST" and 'sign_up' in request.POST:
         form1 = RegisterForm(request.POST)
         if form1.is_valid():
-            username = form1.cleaned_data.get('username')
             form1.save()
-            x = Cart(Name=username, Accomodation=False)
-            x.save()
-            y = Registered(Name=username, Accomodation=False)
-            y.save()
             messages.success(request, 'Registered.. Voila!!')
     if request.method == "POST" and 'log_in' in request.POST:
         form2 = AuthenticationForm(request=request, data=request.POST)
@@ -61,6 +55,7 @@ def sponsors(request):
     return render(request, "users/sponsors.html")
 
 def user(request, username, id):
+    form = EventForm()
     user = User.objects.get(username = username)
     registered = Registered.objects.get(Name=username)
     try:
@@ -76,17 +71,15 @@ def user(request, username, id):
         raise Http404("Please login through the Register page..")
     event = Event.objects.all()
     try:
-        cart = Cart.objects.get(Name=username)
-    except Cart.DoesNotExist:
-        cart = None
-    
-    form = EventForm(username, instance=cart)
+        select = SelectedEvent.objects.get(Name=username)
+    except SelectedEvent.DoesNotExist:
+        select = None
 
     if request.method == 'POST' and 'cart' in request.POST:
         return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
 
     if request.method == 'POST':
-        form = EventForm(username, request.POST, instance=cart)
+        form = EventForm(request.POST)
         if form.is_valid():
             form.save()
             q = Cart.objects.filter(Name=username)
@@ -95,14 +88,14 @@ def user(request, username, id):
             y.save()
             messages.success(request, 'Items added to your cart. You are being redirected to the cart right now.')
             return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
+            x = form.save(commit=False)
+            x.Name = username
+            x.save()
 
     context = {
         "user":user,
-        "event":event,
         "form":form,
-        "cart":cart,
-        "x":x,
-        "registered":registered,
+        "select":select,
     }
     return render(request, "users/user.html", context)
 
@@ -160,5 +153,17 @@ def cart(request, username, id):
         "y":y,
         "x":x,
         "z":z
+from django.views.generic import View
+from .utils import render_to_pdf
+from django.template.loader import get_template
+
+def genrate_pdf(request, *args, **kwargs):
+    template=get_template("pdf/bill.html")
+    context={
+    "invoice_id":123,
+    "customer_name":"Nikunj",
+    "amount":123,
     }
-    return render(request, "users/cart.html", context)
+    html=template.render(context)
+    pdf=render_to_pdf("pdf/bill.html",context)
+    return HttpResponse(pdf,content_type="application/pdf")
