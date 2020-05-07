@@ -66,7 +66,7 @@ def user(request, username, id):
     try:
         notregistered = notRegistered.objects.get(Name=username)
     except notRegistered.DoesNotExist:
-        notregistered = notRegistered(Name=username, Accomodation=False)
+        notregistered = notRegistered(Name=username, Accomodation=True)
         notregistered.save()
         r = Event.objects.all()
         for event in r:
@@ -82,6 +82,9 @@ def user(request, username, id):
     
     form = EventForm(username, instance=cart)
 
+    if request.method == 'POST' and 'cart' in request.POST:
+        return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
+
     if request.method == 'POST':
         form = EventForm(username, request.POST, instance=cart)
         if form.is_valid():
@@ -90,6 +93,8 @@ def user(request, username, id):
             y = Registered.objects.get(Name=username)
             y.Cart.set(q)
             y.save()
+            messages.success(request, 'Items added to your cart. You are being redirected to the cart right now.')
+            return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
 
     context = {
         "user":user,
@@ -101,8 +106,10 @@ def user(request, username, id):
     }
     return render(request, "users/user.html", context)
 
-def cart(request, username):
+def cart(request, username, id):
     user = User.objects.get(username = username)
+    if user.id != id:
+        raise Http404("Please login through the Register page..")
     try:
         cart = Cart.objects.get(Name=username)
         registered = Registered.objects.get(Name=username)
@@ -111,24 +118,32 @@ def cart(request, username):
     except Registered.DoesNotExist:
         registered = None
 
-    if request.method == 'POST':
+    if request.method == 'POST' and 'continue' in request.POST:
+        return HttpResponseRedirect(reverse("user", args=(username, user.id)))
+
+    if request.method == 'POST' and 'submit' in request.POST:
         x = cart.Events.all()
         notregistered = notRegistered.objects.get(Name=username)
         notregistered.delete()
-        notregistered = notRegistered(Name=username, Accomodation=False)
+        notregistered = notRegistered(Name=username, Accomodation=True)
         notregistered.save()
         for event in x:
             registered.Events.add(event)
-        if cart.Accomodation:
+        if cart.Accomodation ==True:
             registered.Accomodation = True
             registered.save()
+        if registered.Accomodation == True:
             notregistered.Accomodation=False
             notregistered.save()
         x = registered.Events.all()
         y = Event.objects.all()
         z = y.difference(x)
         for event in z:
-            notregistered.Events.add(event)        
+            notregistered.Events.add(event)
+        x = Cart(Name=username, Accomodation=False)
+        x.save()
+        messages.success(request, 'Items are brought. You are being redirected to the user page right now.')
+        return HttpResponseRedirect(reverse("user", args=(username, user.id)))
     
     x = 0
     z = Cart.objects.get(Name=username)

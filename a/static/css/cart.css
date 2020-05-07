@@ -31,19 +31,15 @@ html{
     color: whitesmoke;
 }
 
+.qwe{
+    position: relative;
+}
+
 .cost{
-    position: absolute;
-    left: 7.5%;
-    top: 300%;
+    position: relative;
     font-family: Isle;
     font-size: xx-large;
     color: whitesmoke;
-}
-
-.btn-dark{
-    position: relative;
-    left: 10%;
-    top: 350%;
 }
 
 input[type="checkbox"]{

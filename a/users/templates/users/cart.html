@@ -88,12 +88,21 @@
                             <li></li>
                         {% endif %}
                     </ul>
-                    <button class="btn btn-outline-dark" name="submit"><p style="font-size:x-large; font-family: Isle;">Proceed to checkout</p></button>
+                    <p class="cost" style="position: relative;">Total Cost = {{x}}</p><br>
+                    <button class="btn btn-outline-dark" name="submit" style="position: relative;"><p style="font-size:x-large; font-family: Isle; color: black;">Proceed to checkout</p></button>
+                    <button class="btn btn-outline-dark" name="continue" style="position: relative;"><p style="font-size:x-large; font-family: Isle; color: black;">Continue Shopping</p></button>
                 </div>
-                <p class="cost">Total Cost = {{x}}</p>
             </form>
         </div>
         <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+		{% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}
+                    <script>alert("{{ message }}")</script> 
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
         <script>
             $(document).ready(function(){

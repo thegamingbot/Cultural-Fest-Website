@@ -77,10 +77,11 @@
         <p class="Hi">Hi, {{user.username}}</p>
         <a href="../" class="logout">Logout</a>
         
-        <a href="cart" class="Cart">
-            <button class="btn btn-light"><p style="font-family: Chopsic; font-size: 20px;">CART</p></button>
-        </a>
-        
+        <form method = POST class="Cart">
+            {% csrf_token %}
+            <button class="btn btn-light" name = "cart"><p style="font-family: Chopsic; font-size: 20px;">CART</p></button>
+        </form>
+
         <button class="red" onclick="openPage('Registered_Events', this)" id="defaultOpen">Registered Events</button>
         <button class="green" onclick="openPage('All_Events', this)">All Events</button>
 
@@ -106,7 +107,7 @@
 
         <div id="All_Events" class="tabcontent">
             <p class="x">Accomodation and All Events</p><br><br><br>
-            <form method = POST enctype="multipart/form-data">
+            <form method = POST>
                 {% csrf_token %}
                 <div class="form">
                     {{form|crispy}}
@@ -114,6 +115,14 @@
                 </div>
             </form>
         </div>
+
+		{% if messages %}
+            {% for message in messages %}
+                {% if message.tags %}
+                    <script>alert("{{ message }}")</script> 
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
         <script>
             function openPage(pageName,elmnt) {

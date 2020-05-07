@@ -15,7 +15,7 @@ urlpatterns = [
     path("sponsors/", views.sponsors, name="sponsors()"),
     path("index/", views.index, name="index()"),
     path("<username>/<int:id>", views.user, name="user"),
-    path("<username>/cart/", views.cart, name="cart"),
+    path("<username>/<int:id>/cart/", views.cart, name='cart'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
