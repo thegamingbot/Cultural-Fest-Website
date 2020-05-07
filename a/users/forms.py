@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from crispy_forms.bootstrap import Field
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
-from .models import SelectedEvent, Event
+from .models import Cart, Event, Registered, notRegistered
 
 class RegisterForm (UserCreationForm):
     first_name = forms.CharField(max_length=64, widget=forms.TextInput(attrs={'placeholder': 'First Name', 'autofocus': True}))
@@ -33,8 +33,16 @@ class EventForm(forms.ModelForm):
                        queryset = Event.objects.all()
                )
     class Meta: 
-        model = SelectedEvent
+        model = Cart
         exclude = ['Name']
         widgets = {
             'Events': forms.CheckboxInput(attrs={'class': 'form-control'})
         }
+
+    def __init__(self, user, *args, **kwargs):
+        super(EventForm, self).__init__(*args, **kwargs)
+        y = notRegistered.objects.get(Name=user)
+        self.fields['Events'].queryset = y.Events.all()
+        self.fields['Events'].label = ''
+        if y.Accomodation == False:
+            self.fields['Accomodation'].widget.attrs['disabled'] = True

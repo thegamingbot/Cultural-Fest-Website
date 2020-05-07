@@ -8,12 +8,27 @@ class Event(models.Model):
     Cost = models.IntegerField()
 
     def __str__(self):
-        return f"{self.Name}"
+        return f"Name: {self.Name} | Cost: {self.Cost}"
 
-class SelectedEvent(models.Model):
+class Cart(models.Model):
     Name = models.CharField(primary_key=True, max_length = 64)
     Events = models.ManyToManyField(Event, blank=True)
     Accomodation = models.BooleanField()
 
+    def __str__(self):
+        return f"{self.Name}"
+
+class Registered(models.Model):
+    Name = models.CharField(primary_key=True, max_length = 64)
+    Cart = models.ManyToManyField(Cart, blank=True)
+    Events = models.ManyToManyField(Event, blank=True)
+    Accomodation = models.BooleanField()
+    def __str__(self):
+        return f"{self.Name}"
+
+class notRegistered(models.Model):
+    Name = models.CharField(primary_key=True, max_length = 64)
+    Events = models.ManyToManyField(Event, blank=True)
+    Accomodation = models.BooleanField()
     def __str__(self):
         return f"{self.Name}"

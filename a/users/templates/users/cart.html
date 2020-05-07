@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class=" -webkit-">
+    <head>
+
+        <title>{{user.username}}'s Cart</title>
+
+        {% load static %}
+        {% load crispy_forms_tags %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <style>
+            @font-face {
+                font-family: TSA;
+                src: local('../static/fonts/TSA'),
+                    url('../static/fonts/TSA.ttf') format("truetype");
+            }
+
+            @font-face {
+            font-family: Chopsic;
+            src: local('../static/fonts/Chopsic'),
+                url('../static/fonts/Chopsic.ttf') format("truetype");
+            }
+
+            @font-face {
+            font-family: Billabong;
+            src: local('../static/fonts/Billabong'),
+                url('../static/fonts/Billabong.ttf') format("truetype");
+            }
+
+            @font-face {
+            font-family: Isle;
+            src: local('../static/fonts/Isle'),
+                url('../static/fonts/Isle.ttf') format("truetype");
+            }
+
+            @font-face {
+            font-family: Avengeance;
+            src: local('../static/fonts/Avengeance'),
+                url('../static/fonts/Avengeance.ttf') format("truetype");
+            }
+
+            @font-face {
+            font-family: VampireWars;
+            src: local('../static/fonts/VampireWars'),
+                url('../static/fonts/VampireWars.ttf') format("truetype");
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="border">
+            <img style="width:100%;height:180%;" src="{% static 'images/bg11.png' %}">
+        </div>
+
+        <div class="circles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <span></span>
+        </div>
+        <div class="text">SHADOW</div>
+        
+
+        <div style="position: absolute; top: 40%; left: 10%; z-index: 2;">
+            <p class="x">Items in your cart...</p>
+            <form method = POST enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="qwerty">
+                    <ul>
+                        {% for event in y %}
+                            <li>{{event}}</li><br>
+                        {% empty %}
+                            <li>No events in the cart.</li><br>
+                        {% endfor %}
+                        {% if z.Accomodation %}
+                            <li>Name: Accomodation | Cost: 100</li><br>
+                        {% else %}
+                            <li></li>
+                        {% endif %}
+                    </ul>
+                    <button class="btn btn-outline-dark" name="submit"><p style="font-size:x-large; font-family: Isle;">Proceed to checkout</p></button>
+                </div>
+                <p class="cost">Total Cost = {{x}}</p>
+            </form>
+        </div>
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100){
+                        $('#scroll').fadeIn();
+                    }
+                    else{
+                        $('#scroll').fadeOut();
+                    }
+                });
+                $('#scroll').click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+            });
+        </script>
+
+    </body>
+
+</html>

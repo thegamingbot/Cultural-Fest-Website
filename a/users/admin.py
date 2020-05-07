@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import Event, SelectedEvent
+from .models import Event, Cart, Registered, notRegistered
 
 # Register your models here.
 admin.site.register(Event)
-admin.site.register(SelectedEvent)
+admin.site.register(Cart)
+admin.site.register(Registered)
+admin.site.register(notRegistered)

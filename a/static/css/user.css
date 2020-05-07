@@ -1,5 +1,5 @@
 body{
-    background-color: whitesmoke;
+    background-image: linear-gradient(to left, #200122, #6f0000, #200122);
   }
 
 html{
@@ -16,7 +16,7 @@ html{
     position: absolute;
     height: 150%;
     width: 100.5%;
-    top: 0%;
+    top: -2.9%;
     left: -0.5%;
     opacity: 0.75;
     z-index: 1;
@@ -29,13 +29,13 @@ html{
     top: 40%;
     left: 50%;
     border-radius: 0px 30px 30px 0px;
-    background-color: transparent;
+    background-image: linear-gradient(to right, #7b4397, #dc2430);
     color: white;
+    font-family: VampireWars;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
+    font-size: 55px;
     width: 40%;
     z-index: 2;
 }
@@ -45,13 +45,13 @@ html{
     left: 10%;
     top: 40%;
     border-radius: 30px 0px 0px 30px;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
+    background-image: linear-gradient(to left, #7b4397, #dc2430);
+    color: rgb(255, 255, 255);
+    font-family: VampireWars;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
+    font-size: 55px;
     width: 40%;
     z-index: 2;
 }
@@ -72,5 +72,51 @@ html{
     z-index: 2;
 }
 
-#Home {background-color: transparent;}
-#News {background-color: transparent;}
+#Registered_Events {background-color: transparent;}
+#All_Events {background-color: transparent;}
+
+.form{
+    position: absolute;
+    left: 7.5%;
+    font-family: Isle;
+    font-size: xx-large;
+    color: whitesmoke;
+}
+
+.Hi{
+    position: absolute;
+    top: 10%;
+    right: 22.5%;
+    font-family: Billabong;
+    font-size: 35px;
+    color: silver;
+    z-index: 2;
+}
+
+.logout{
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    font-family: Billabong;
+    font-size: 35px;
+    color: silver;
+    z-index: 2;
+}
+
+.Cart{
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    z-index: 2;
+}
+
+.x{
+    font-family: Avengeance;
+    font-size: 60px;
+    color: white;
+}
+
+input[type="checkbox"]{
+    width: 30px; /*Desired width*/
+    height: 30px; /*Desired height*/
+}
