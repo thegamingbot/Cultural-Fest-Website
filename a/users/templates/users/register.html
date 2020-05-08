@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" class=" -webkit-">
-	<head>
+    <head>
 
-		{% load static %}
+        {% load static %}
 		{% load crispy_forms_tags %}
 
-		<meta charset="utf-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>Register</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Register and Login</title>
 		<link rel="stylesheet" href= "{% static 'css/logo.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/register_login.css' %}">
 		<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
 		<meta name="apple-mobile-web-app-title" content="CodePen">
 		<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 		<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-		<title>CodePen - SignUp / SignIn</title>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<style>
+        <style>
 			@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
 
 	        @font-face {
@@ -57,49 +54,55 @@
 			}
 
 			@font-face {
-			  font-family: Smilen;
-			  src: local('../static/fonts/Smilen'),
-			       url('../static/fonts/Smilen.ttf') format("truetype");
+				font-family: Smilen;
+				src: local('../static/fonts/Smilen'),
+					  url('../static/fonts/Smilen.ttf') format("truetype");
+			}
+
+			@font-face {
+				font-family: Run;
+				src: local('../static/fonts/Run'),
+					url('../static/fonts/Run.ttf') format("truetype");
 			}
 
 			@font-face {
 				font-family: Toxia;
-			  src: local('../static/fonts/Toxia'),
-			       url('../static/fonts/Toxia.ttf') format("truetype");
+			  	src: local('../static/fonts/Toxia'),
+			       	  url('../static/fonts/Toxia.ttf') format("truetype");
 			}
 		</style>
-	</head>
+    </head>
+    <body>
+        <div class="border">
+            <img class="border-img" src="{% static 'images/bg5.png' %}">
+        </div>
 
-    <body translate="no">
-        <canvas width="1862" height="982"></canvas>
-        <canvas width="1862" height="982"></canvas>
-    <!-- partial -->
+        <div>
+            <a href="../">
+                <div class="circles">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <span></span>
+                </div>
+				<div class="text">SHADOW</div>
+            </a>
+        </div>
 
+        <div class="menu">
+            <ul>
+                <li><a href="../accomodation">ACCOMMODATION</a></li>
+                <li><a href="../register">REGISTER</a></li>
+                <li><a href="../events">EVENTS</a></li>
+                <li><a href="../schedule">SCHEDULE</a></li>
+                <li><a href="../sponsors">SPONSORS</a></li>
+                <li><a href="../contact_us">CONTACT US</a></li>
+            </ul>
+        </div>
 
-		<div id="menu">
-			<ul>
-				<li><a href="../accomodation">ACCOMMODATION</a></li>
-				<li><a href="../register">REGISTER</a></li>
-				<li><a href="../events">EVENTS</a></li>
-				<li><a href="../schedule">SCHEDULE</a></li>
-				<li><a href="../sponsors">SPONSORS</a></li>
-				<li><a href="../contact_us">CONTACT US</a></li>
-			</ul>
-		</div>
+        <h1 class="heading">Register & Login</h1>
 
-		<a href="../">
-		<div class="circles">
-			<div></div>
-			<div></div>
-			<div></div>
-			<span></span>
-
-		</div>
-			<div class="text">SHADOW</div>
-			<pre>        </pre>
-		</a>
-
-		<div class="container">
+        <div class="container">
 			<div class="signup">
 				<br><br>
 				<h1 class="heading-1">HEY<br>THERE!</h1>
@@ -119,21 +122,6 @@
 		<div class="signup__form">
 			<form method="POST">
 				<h2 class="heading-2--form">Sign Up</h2>
-				<!-- <div class="input">
-					<input type="text" placeholder="Full Name">
-				</div>
-				<div class="input">
-					<input type="email" placeholder="E-Mail">
-				</div>
-				<div class="input">
-					<input type="password" placeholder="Password">
-				</div>
-				<div class="input">
-					<input type="phone" placeholder="Phone No.">
-				</div>
-				<div class="input">
-					<input type="college" placeholder="College Name">
-				</div> -->
 				{% csrf_token %}
 				{{form1|crispy}}
 				<div class="login__box">
@@ -144,22 +132,12 @@
 		<div class="login__form">
 			<form method="POST" class="form-group">
 				<h2 class="heading-2--form">Log In</h2>
-				<!-- <div class="input">
-					<input type="email" placeholder="E-Mail">
-				</div>
-				<div class="input">
-					<input type="password" placeholder="Password">
-				</div> -->
 				{% csrf_token %}
 				{{form2|crispy}}
 				<div class="login__box">
 					<button class="btn btn-danger" name="log_in">Log In</button>
 				</div>
 			</form>
-		</div>
-
-        <div class="border">
-        	<img style="width:100%;height:180%;" src="{% static 'images/bg5.png' %}">
 		</div>
 
 		{% if messages %}
@@ -170,25 +148,33 @@
 			{% endfor %}
 		{% endif %}
 
-		<a href="#" id="scroll" style="display: none;"><span></span></a>
-		
-        <script>
-			$(document).ready(function(){
-				$(window).scroll(function(){
-					if ($(this).scrollTop() > 100) {
-						$('#scroll').fadeIn();
-					} else {
-						$('#scroll').fadeOut();
-					}
-				});
-				$('#scroll').click(function(){
-					$("html, body").animate({ scrollTop: 0 }, 600);
-					return false;
-				});
-			});
-        </script>
+		<div class="info">
+			<p class="down">
+				Register here to enter the world of Shadow and receive your very own unique CF passport, 
+				which will come to your use for participation or entry to the activities going on 
+				during Shadow.<br>
+				<br>On receiving the CF passport, you'll also need to go over to the competitions 
+				page and register there for the specific competition of your choice.
+			</p>
+		</div>
 
-        <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100) {
+                        $('#scroll').fadeIn();
+                    } else {
+                        $('#scroll').fadeOut();
+                    }
+                });
+                $('#scroll').click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+            });
+		</script>
+		<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script id="rendered-js">
 			$("#login").click(function () {
@@ -207,6 +193,5 @@
 				$('.mdb-select').materialSelect();
 			});
 		</script>
-
-  </body>
+    </body>
 </html>

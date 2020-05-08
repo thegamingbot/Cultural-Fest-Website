@@ -12,58 +12,80 @@ html{
   background: transparent;
 }
 
-.circles{
-  position: absolute;
-  top: 1%;
-  left: 1%;
-}
-
-.text{
+h1{
   position: absolute;
   top: 30%;
-  left: 3%;
+  left: 0%;
+  text-align: center;
+  width: 100vw;
+  background: -webkit-linear-gradient(#8e2de2,#4a00e0  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Run;
+  font-size: 4.5vw;
+  z-index: 0;
+}
+
+.menu{
+background-size: cover;
+position: absolute;
+right: 7.5%;
+top: 20%;
+  display: flex;
+  flex-direction: row-reverse;
+font-family: Alternity;
+font-size: 1.6vw;
+width: 85vw;
+z-index: 5;
+}
+
+ul{
+border-radius: 25px;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+li{
+float: left;
+}
+
+li a{
+display: block;
+color : #ffffff;
+text-align: center;
+padding: 14px 16px;
+border-radius: 25px;
+text-decoration: none;
+font-size: 100%;
+}
+
+li a:hover{
+  background-image: linear-gradient(to left, #7303c0, #ec38bc, #fdeff9);
 }
 
 .border{
   position: absolute;
-  height: 250%;
-  top: -4%;
+  top: -10%;
   left: 0%;
-  opacity: 1;
-  z-index: 1;
 }
 
-li a {
-  display: block;
-  color: #00ffff;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 125%;
-}
-
-li a:hover{
-  background-image: linear-gradient(to right, #7303c0, #ec38bc, #fdeff9);
-}
-
-#menu{
-  top: 20%;
-  right: 8%;
-  background-size: cover;
-  flex-direction: row-reverse;
-  display: flex;
+.border-img{
+  width: 100.5vw;
+  height: 550vh;
 }
 
 .table1{
   position: absolute;
-  top: 55%;
-  left: 10%;
-  border-collapse: collapse;
-  border-spacing: 20px;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  color: white;
-  z-index: 2;
+  width: 80vw;
+top: 67.5%;
+left: 10%;
+border-collapse: collapse;
+border-spacing: 20px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+color: white;
+z-index: 2;
 }
 
 .table1 td, .table1 th {
@@ -92,8 +114,9 @@ li a:hover{
 
 .c1{
   position: absolute;
-  top: 38%;
-  left: 43.5%;
+  top: 45%;
+  left: 0%;
+  text-align: center;
   width: 100%;
   font-family: Smilen;
   background: -webkit-linear-gradient(#ee9ca7, #ffdde1);
@@ -106,8 +129,9 @@ li a:hover{
 
 .table2{
   position: absolute;
-  top: 175%;
+  top: 190%;
   left: 10%;
+  width: 80vw;
   border-collapse: collapse;
   border-spacing: 20px;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -141,8 +165,9 @@ li a:hover{
 
 .c2{
   position: absolute;
-  top: 158%;
-  left: 43.5%;
+  top: 167.5%;
+  left: 0%;
+  text-align: center;
   width: 100%;
   font-family: Smilen;
   background: -webkit-linear-gradient(#ee9ca7, #ffdde1);
@@ -155,8 +180,9 @@ li a:hover{
 
 .table3{
   position: absolute;
-  top: 315%;
-  left: 13%;
+  top: 342.5%;
+  left: 10%;
+  width: 80vw;
   border-collapse: collapse;
   border-spacing: 20px;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -190,8 +216,9 @@ li a:hover{
 
 .c3{
   position: absolute;
-  top: 298%;
-  left: 43.5%;
+  top: 320%;
+  left: 0%;
+  text-align: center;
   width: 100%;
   font-family: Smilen;
   background: -webkit-linear-gradient(#ee9ca7, #ffdde1);
@@ -199,39 +226,39 @@ li a:hover{
   -webkit-text-fill-color: transparent;
   font-size: 500%;
   font-style: italic;
-  z-index: 0;
+  z-index: 3;
 }
 
 #scroll {
-    position:fixed;
-    right:10px;
-    bottom:10px;
-    cursor:pointer;
-    width:50px;
-    height:50px;
-    background-color: black;
-    text-indent:-9999px;
-    display:none;
-    -webkit-border-radius:60px;
-    -moz-border-radius:60px;
-    border-radius:60px;
-    z-index: 5;
+  position:fixed;
+  right:10px;
+  bottom:10px;
+  cursor:pointer;
+  width:50px;
+  height:50px;
+  background-color: black;
+  text-indent:-9999px;
+  display:none;
+  -webkit-border-radius:60px;
+  -moz-border-radius:60px;
+  border-radius:60px;
+  z-index: 5;
 }
 
 #scroll span {
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-8px;
-    margin-top:-12px;
-    height:0;
-    width:0;
-    border:8px solid transparent;
-    border-bottom-color:#ffffff;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-8px;
+  margin-top:-12px;
+  height:0;
+  width:0;
+  border:8px solid transparent;
+  border-bottom-color:#ffffff;
 }
 
 #scroll:hover {
-    background-color:#555;
-    opacity:1;filter:"alpha(opacity=100)";
-    -ms-filter:"alpha(opacity=100)";
+  background-color:#555;
+  opacity:1;filter:"alpha(opacity=100)";
+  -ms-filter:"alpha(opacity=100)";
 }

@@ -1,224 +1,194 @@
 <!DOCTYPE html>
-  <html lang="en" class=" -webkit-">
-  <head>
+<html lang="en" class=" -webkit-">
+	<head>
+		
+		{% load static %}
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Fest2021</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/background.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/logo.css' %}">
+		<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+		<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			@font-face {
+				font-family: TSA;
+				src: local('../static/fonts/TSA'),
+					url('../static/fonts/TSA.ttf') format("truetype");
+			}
 
-    {% load static %}
+			@font-face {
+				font-family: Alternity;
+				src: local('Alternity'),
+					url('../static/fonts/Alternity.ttf') format("truetype");
+			}
 
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Fest2021</title>
-      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-      <link rel="stylesheet" href= "{% static 'css/logo.css' %}">
-      <link rel="stylesheet" href="{% static 'css/background.css' %}">
-      <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
-      <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-      <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <style>
-          @font-face {
-            font-family: TSA;
-            src: local('../static/fonts/TSA'),
-                 url('../static/fonts/TSA.ttf') format("truetype");
-          }
+			@font-face {
+				font-family: Chopsic;
+				src: local('Chopsic'),
+					url('../static/fonts/Chopsic.ttf') format("truetype");
+			}
 
-          @font-face {
-            font-family: Alternity;
-            src: local('Alternity'),
-                 url('../static/fonts/Alternity.ttf') format("truetype");
-          }
+			@font-face {
+				font-family: Alternity;
+				src: local('Alternity'),
+					url('../static/fonts/Alternity.ttf') format("truetype");
+			}
 
-          @font-face {
-            font-family: Chopsic;
-            src: local('Chopsic'),
-                 url('../static/fonts/Chopsic.ttf') format("truetype");
-          }
+			@font-face {
+				font-family: Chalkduster;
+				src: local('Chalkduster'),
+					url('../static/fonts/Chalkduster.ttf') format("truetype");
+			}
+			@font-face {
+				font-family: Bitsumishi;
+				src: local('Bitsumishi'),
+					url('../static/fonts/Bitsumishi.ttf') format("truetype");
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas width="100vw" height="100vh"></canvas>
+		<canvas width="100vw" height="100vh"></canvas>
 
-          @font-face {
-            font-family: Alternity;
-            src: local('Alternity'),
-                 url('../static/fonts/Alternity.ttf') format("truetype");
-          }
+		<a href="../">
+			<div class="circles">
+				<div></div>
+				<div></div>
+				<div></div>
+				<span></span>
+			</div>
+			<div class="text">SHADOW</div>
+			<pre>        </pre>
+		</a>
 
-          @font-face {
-            font-family: Chalkduster;
-            src: local('Chalkduster'),
-                 url('../static/fonts/Chalkduster.ttf') format("truetype");
-          }
+		<div class="bg">
+			<img class="bg_img" src="{% static 'images/bg2.png' %}">
+		</div>
 
-          @font-face {
-        font-family: Bitsumishi;
-        src: local('Bitsumishi'),
-          url('../static/fonts/Bitsumishi.ttf') format("truetype");
-          }
-      </style>
-  </head>
+		<div class="menu">
+			<ul>
+				<li><a href="accomodation">ACCOMMODATION</a></li>
+				<li><a href="register">REGISTER</a></li>
+				<li><a href="events">EVENTS</a></li>
+				<li><a href="schedule">SCHEDULE</a></li>
+				<li><a href="sponsors">SPONSORS</a></li>
+				<li><a href ="contact_us">CONTACT US</a></li>
+			</ul>
+		</div>
 
-  <body>
-    <body translate="no">
-        <canvas width="1862" height="982"></canvas>
-        <canvas width="1862" height="982"></canvas>
-    <!-- partial -->
-        <script  src="{% static 'js/background.js' %}"></script>
-  <a href="../">
-    <div class="circles">
-      <div></div>
-      <div></div>
-      <div></div>
-      <span></span>
+		<div class="hero1">
+			<img class="h1-img" src="{% static 'images/hero1.png' %}">
+		</div>
+  
+		<div class="hero2">
+			<img class="h2-img" src="{% static 'images/hero2.png' %}">
+		</div>
+  
+		<div class="hero3">
+			<img class="h3-img" src="{% static 'images/hero3.png' %}">
+		</div>
+  
+		<div class="hero4">
+			<img class="h4-img" src="{% static 'images/hero4.png' %}">
+		</div>
+  
+		<div class="bgh">
+			<img class="bgh1-img" src="{% static 'images/10.png' %}">
+		</div>
+  
+		<div class="bgh2">
+			<img class="bgh2-img" src="{% static 'images/3.png' %}">
+		</div>
 
-    </div>
+		<div class="image2">
+			<img class="img2" src="{% static 'images/bg3.png' %}">
+		</div>
 
-      <div class="text">SHADOW</div>
-      <pre>        </pre>
-  </a>
+		<div class="bg100">
+			<img class="bg1001" src="{% static 'images/bg100.png' %}">
+		</div>
 
-    <style>
-          p {
-            position: absolute;
-            text-align: center;
-            font-size: 55px;
-            margin-top: 42%;
-            left: 25%;
-            font-family: ha;
-            font-weight: bolder;
-            padding:10%;
-            z-index: 3;
-            right: 25%;
-          }
-      </style>
-      </head>
-      <body>
+		<div class="aboutus">
+			<p class="heading">ABOUT US</p>
+		</div>
 
-      <p id="demo"></p>
-
-      <script>
-      // Set the date we're counting down to
-      var countDownDate = new Date("Oct 9, 2020 00:00:00").getTime();
-
-      // Update the count down every 1 second
-      var x = setInterval(function() {
-
-        // Get today's date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Output the result in an element with id="demo"
-        document.getElementById("demo").innerHTML = days + " days  " + hours + "h  "
-        + minutes + "m  " + seconds + "s   "+ "Left!";
-
-        // If the count down is over, write some text
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "Hurray!!!";
-        }
-      }, 1000);
-      </script>
-
-      <div class="image2">
-        <img style="width:90%;height:60%;" src="{% static 'images/bg3.png' %}">
-      </div>
-
-      <div class="image">
-        <img style="width:401%;height:102%;" src="{% static 'images/bg2.png' %}">
-      </div>
-
-      <div class="hero1">
-          <img style="width:100%;" src="{% static 'images/hero1.png' %}">
-      </div>
-
-      <div class="hero2">
-          <img style="width:50%;" src="{% static 'images/hero2.png' %}">
-      </div>
-
-      <div class="hero3">
-          <img style="width:75%;" src="{% static 'images/hero3.png' %}">
-      </div>
-
-      <div class="hero4">
-          <img style="width:150%;" src="{% static 'images/hero4.png' %}">
-      </div>
-
-      <div class="bgh">
-        <img style="width:110%;" src="{% static 'images/10.png' %}">
-      </div>
-
-      <div class="bgh2">
-        <img style="width:250%;" src="{% static 'images/3.png' %}">
-      </div>
-
-      <div class="btm">
-        <img style="width:155%;" src="{% static 'images/btm.png' %}">
-      </div>
-
-      <div id="menu">
-      <ul>
-        <li><a href="accomodation">ACCOMMODATION</a></li>
-        <li><a href="register">REGISTER</a></li>
-        <li><a href="events">EVENTS</a></li>
-        <li><a href="schedule">SCHEDULE</a></li>
-        <li><a href="sponsors">SPONSORS</a></li>
-        <li><a href ="contact_us">CONTACT US</a></li>
-      </ul>
-      </div>
-
-      <p class="bottom">
-        <a href="index">HOME</a><br><br>
-        <a href="accomodation">ACCOMMODATION</a><br><br>
-        <a href="register">REGISTER</a><br><br>
-        <a href="events">EVENTS</a><br><br>
-        <a href="sponsors">SPONSORS</a><br>
-      </p>
-
-
-      <p class="social">CONNECT WITH : </p>
-
-          <a href="http://www.facebook.com" class="fa fa-facebook"></a>
-          <a href="http://www.twitter.com" class="fa fa-twitter"></a>
-          <a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
-          <a href="http://www.youtube.com" class="fa fa-youtube"></a>
-          <a href="http://www.instagram.com" class="fa fa-instagram"></a>
-
-      <div class="aboutus">
-        <p><u><font size="32" face="Bitsumishi" color="#00f9ff">ABOUT US</font></u><br><br>
-        <font size="6" face="georgia"><br>
-          Welcome to SHADOW. But what purpose does the name SHADOW serve ? SHADOW is all about stepping out of your shadow and
+		<div class="paradiv">
+			<p class="para">
+				Welcome to SHADOW. But what purpose does the name SHADOW serve ? SHADOW is all about stepping out of your shadow and
           unveiling your hidden talents at abilities. At SHADOW language, colour, state, branch does not matter at all. What matters is your will
-          to participate and if that is there then nobody in the world can stop you from having the best time of your life. At SHADOW, we have
+          to participate and if that is there then nobody in the world can stop you from having the best time of your life. <br><br>At SHADOW, we have
           everything; from competitions and events to carefree game stalls to delicious food stalls to amazing pro shows and performances that
-          will leave you enthralled and catching for your breath and the end of it. It is all in 1 deal where everyone from the south to the north to the
+          will leave you enthralled and catching for your breath and the end of it.<br><br>It is all in 1 deal where everyone from the south to the north to the
           east and the west comes together in an extravagant exchange of Culture, Values, Ideals, Knowledge and most importantly Absolute
-          Fun. So this is everything about us and if you want to know more, joinus at IIITDM Kancheepuram for SHADOW.
-      </font>
-      </p>
-      </div>
+          Fun. So this is everything about us and if you want to know more, join us at IIITDM Kancheepuram for SHADOW.
+			</p>
+		</div>
 
-      <div class="bg100">
-        <img style="width:110%;height:60%;" src="{% static 'images/bg100.png' %}">
-      </div>
-      <a href="#" id="scroll" style="display: none;"><span></span></a>
-      <script>
-      $(document).ready(function(){
-          $(window).scroll(function(){
-              if ($(this).scrollTop() > 100) {
-                  $('#scroll').fadeIn();
-              } else {
-                  $('#scroll').fadeOut();
-              }
-          });
-          $('#scroll').click(function(){
-              $("html, body").animate({ scrollTop: 0 }, 600);
-              return false;
-          });
-      });
-      </script>
-  </body>
+		<script src="{% static 'js/background.js' %}"></script>
+
+		<div class="btm">
+			<img class="btm_img" src="{% static 'images/btm.png' %}">
+		</div>
+
+		<p class="bottom">
+			<a href="index">HOME</a><br><br>
+			<a href="accomodation">ACCOMMODATION</a><br><br>
+			<a href="register">REGISTER</a><br><br>
+			<a href="events">EVENTS</a><br><br>
+			<a href="sponsors">SPONSORS</a><br>
+		</p>
+
+		<div class="div-soc">
+			<p class="social">CONNECT WITH : </p>
+		</div>
+
+		<a href="http://www.facebook.com" class="fa fa-facebook"></a>
+		<a href="http://www.twitter.com" class="fa fa-twitter"></a>
+		<a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
+		<a href="http://www.youtube.com" class="fa fa-youtube"></a>
+		<a href="http://www.instagram.com" class="fa fa-instagram"></a>
+		
+		<p id="demo"></p>
+		
+		<a href="#" id="scroll" style="display: none;"><span></span></a>
+
+		<script>
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('#scroll').fadeIn();
+				} else {
+					$('#scroll').fadeOut();
+				}
+			});
+			$('#scroll').click(function(){
+				$("html, body").animate({ scrollTop: 0 }, 600);
+				return false;
+			});
+		});
+		</script>
+		<script>
+			var countDownDate = new Date("Oct 9, 2020 00:00:00").getTime();
+			var x = setInterval(function() {
+				var now = new Date().getTime();
+				var distance = countDownDate - now;
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				document.getElementById("demo").innerHTML = days + " days  " + hours + "h  "
+				+ minutes + "m  " + seconds + "s   "+ "<br>" + "Left!";
+				if (distance < 0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "Hurray!!!";
+				}
+			}, 1000);
+		</script>
+	</body>
 </html>

@@ -1,98 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" class=" -webkit-">
-  <head>
+    <head>
 
-    {% load static %}
+        {% load static %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Sponsors</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-     <link rel="stylesheet" href= "{% static 'css/logo.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/sponsors.css' %}">
-     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-     <style>
-        @import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Sponsers</title>
+        <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sponsors.css' %}">
 
-        @font-face {
-          font-family: TSA;
-          src: local('../static/fonts/TSA'),
-               url('../static/fonts/TSA.ttf') format("truetype");
-        }
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+        <style>
+			@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+	
+			@font-face {
+			  font-family: TSA;
+			  src: local('../static/fonts/TSA'),
+				   url('../static/fonts/TSA.ttf') format("truetype");
+			}
+	
+			@font-face {
+			  font-family: Alternity;
+			  src: local('Alternity'),
+				   url('../static/fonts/Alternity.ttf') format("truetype");
+			}
+	
+			@font-face {
+			  font-family: Billabong;
+			  src: local('../static/fonts/Billabong'),
+				   url('../static/fonts/Billabong.ttf') format("truetype");
+			}
+        </style>
 
-        @font-face {
-          font-family: Alternity;
-          src: local('Alternity'),
-               url('../static/fonts/Alternity.ttf') format("truetype");
-        }
+    </head>
+    <body>
 
-        @font-face {
-          font-family: Billabong;
-          src: local('../static/fonts/Billabong'),
-               url('../static/fonts/Billabong.ttf') format("truetype");
-        }
-     </style>
+        <div class="border">
+            <img class="border-img" src="{% static 'images/bg14.png' %}">
+        </div>
 
-  </head>
-  <body>
-    <body translate="no">
-        <canvas width="1862" height="982"></canvas>
-        <canvas width="1862" height="982"></canvas>
-    <!-- partial -->
+        <div>
+            <a href="../">
+                <div class="circles">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <span></span>
+                </div>
+                <div class="text">SHADOW</div>
+                <pre>        </pre>
+            </a>
+        </div>
 
-<h1>Sponsers</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="../accomodation">ACCOMMODATION</a></li>
+                <li><a href="../register">REGISTER</a></li>
+                <li><a href="../events">EVENTS</a></li>
+                <li><a href="../schedule">SCHEDULE</a></li>
+                <li><a href="../sponsors">SPONSORS</a></li>
+                <li><a href="../contact_us">CONTACT US</a></li>
+            </ul>
+        </div>
 
-<div id="spons">
-  <img src="{% static 'images/spons2.png' %}" alt="">
-  <br>
-  <br>
-  <br><br><br>
-  <img src="{% static 'images/spons3.png' %}" alt="" width="650px">
-</div>
+		<h1>Sponsers</h1>
+		
+		<img class="img1" src="{% static 'images/spons2.png' %}" alt="">
+		<img class="img2" src="{% static 'images/spons3.png' %}" alt="">
 
-<div id="menu">
-<ul>
-  <li><a href="../accomodation">ACCOMMODATION</a></li>
-  <li><a href="../register">REGISTER</a></li>
-  <li><a href="../events">EVENTS</a></li>
-  <li><a href="../schedule">SCHEDULE</a></li>
-  <li><a href="../sponsors">SPONSORS</a></li>
-  <li><a href="../contact_us">CONTACT US</a></li>
-</ul>
-</div>
-
-<a href="../">
-  <div class="circles">
-    <div></div>
-    <div></div>
-    <div></div>
-    <span></span>
-
-  </div>
-
-    <div class="text">SHADOW</div>
-    <pre>        </pre>
-</a>
-
-          <div class="border">
-            <img style="width:100%;height:180%;" src="{% static 'images/bg14.png' %}">
-          </div>
-          <a href="#" id="scroll" style="display: none;"><span></span></a>
-          <script>
-          $(document).ready(function(){
-              $(window).scroll(function(){
-                  if ($(this).scrollTop() > 100) {
-                      $('#scroll').fadeIn();
-                  } else {
-                      $('#scroll').fadeOut();
-                  }
-              });
-              $('#scroll').click(function(){
-                  $("html, body").animate({ scrollTop: 0 }, 600);
-                  return false;
-              });
-          });
-          </script>
-
-  </body>
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100) {
+                        $('#scroll').fadeIn();
+                    } else {
+                        $('#scroll').fadeOut();
+                    }
+                });
+                $('#scroll').click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+            });
+        </script>
+    </body>
 </html>

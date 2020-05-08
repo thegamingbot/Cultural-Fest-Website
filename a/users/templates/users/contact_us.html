@@ -1,144 +1,345 @@
 <!DOCTYPE html>
 <html lang="en" class=" -webkit-">
-  <head>
+    <head>
 
-    {% load static %}
+        {% load static %}
 
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Contact Us</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-     <link rel="stylesheet" href= "{% static 'css/logo.css' %}">
-     <link rel="stylesheet" type="text/css" href="{% static 'css/contact_us.css' %}">
-     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-     <style>
-         @import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="{% static 'css/logo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/contact_us.css' %}">
 
-         @font-face {
-           font-family: VampireWars;
-           src: local('../static/fonts/VampireWars'),
-                url('../static/fonts/VampireWars.ttf') format("truetype");
-         }
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+		<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+		<meta name="apple-mobile-web-app-title" content="CodePen">
+		<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+		<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+        <style>
+			@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
+   
+			@font-face {
+			  font-family: VampireWars;
+			  src: local('../static/fonts/VampireWars'),
+				   url('../static/fonts/VampireWars.ttf') format("truetype");
+			}
+   
+			@font-face {
+			  font-family: TSA;
+			  src: local('../static/fonts/TSA'),
+				   url('../static/fonts/TSA.ttf') format("truetype");
+			}
+   
+			@font-face {
+			  font-family: Alternity;
+			  src: local('../static/fonts/Alternity'),
+				   url('../static/fonts/Alternity.ttf') format("truetype");
+			}
+		</style>
+		<script>
+			window.console = window.console || function(t) {};
+		</script>
+		<script>
+			if (document.location.search.match(/type=embed/gi)) {
+			  window.parent.postMessage("resize", "*");
+			}
+		</script>
 
-         @font-face {
-           font-family: TSA;
-           src: local('../static/fonts/TSA'),
-                url('../static/fonts/TSA.ttf') format("truetype");
-         }
+    </head>
+    <body>
 
-         @font-face {
-           font-family: Alternity;
-           src: local('Alternity'),
-                url('../static/fonts/Alternity.ttf') format("truetype");
-         }
+        <div class="border">
+            <img class="border-img" src="{% static 'images/bg4.png' %}">
+        </div>
 
-         @font-face {
-       font-family: Bitsumishi;
-       src: local('Bitsumishi'),
-         url('../static/fonts/Bitsumishi.ttf') format("truetype");
-        }
-     </style>
+        <div>
+            <a href="../">
+                <div class="circles">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <span></span>
+                </div>
+                <div class="text">SHADOW</div>
+            </a>
+        </div>
 
-  </head>
-  <body>
-    <body translate="no">
-        <canvas width="1862" height="982"></canvas>
-        <canvas width="1862" height="982"></canvas>
-    <!-- partial -->
+        <div class="menu">
+            <ul>
+                <li><a href="../accomodation">ACCOMMODATION</a></li>
+                <li><a href="../register">REGISTER</a></li>
+                <li><a href="../events">EVENTS</a></li>
+                <li><a href="../schedule">SCHEDULE</a></li>
+                <li><a href="../sponsors">SPONSORS</a></li>
+                <li><a href="../contact_us">CONTACT US</a></li>
+            </ul>
+        </div>
 
-<h1>Contact Us</h1>
+        <h1 class="heading">Contact Us</h1>
+		<div class="contain">
+			<section class="container">
+				<div class="row active-with-click">
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<article class="material-card Teal">
+								<h2>
+									<span>Sai Kaushik Sudhakaran</span>
+									<strong>
+										<i class="fa fa-fw fa-star"></i>
+										CED18I044
+									</strong>
+								</h2>
+								<div class="mc-content">
+									<div class="img-container">
+										<img class="img-responsive" src="{% static 'images/sai.jpg' %}">
+									</div>
+									<div class="mc-description">
+										<h4><b>Hobbies: </b>Listening to music, Cooking, Reading novels, Coding, Watching TV series, Gaming</h4>
+										<br>
+										<h4><b>Interests: </b>Game Development</h4>
+									</div>
+								</div>
+								<a class="mc-btn-action">
+									<i class="fa fa-bars"></i>
+								</a>
+								<div class="mc-footer">
+									<a href="https://www.facebook.com/saikaushiks/" class="fa fa-fw fa-facebook"></a>
+									<a href="https://www.instagram.com/kaushik.8.2/" class="fa fa-fw fa-instagram"></a>
+									<a href="https://www.linkedin.com/in/kihsuakias/" class="fa fa-fw fa-linkedin"></a>
+									<a href="mailto:saikaushik609@gmail.com" class="fa fa-fw fa-envelope-o"></a>
+									<a href="tel:9591716202" class="fa fa-fw fa-phone"></a>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+					</div>
 
-<div id="menu">
-<ul>
-  <li><a href="../accomodation">ACCOMMODATION</a></li>
-  <li><a href="../register">REGISTER</a></li>
-  <li><a href="../events">EVENTS</a></li>
-  <li><a href="../schedule">SCHEDULE</a></li>
-  <li><a href="../sponsors">SPONSORS</a></li>
-  <li><a href="../contact_us">CONTACT US</a></li>
-</ul>
-</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<article class="material-card Purple">
+								<h2>
+									<span>Mridul Harish</span>
+									<strong>
+										<i class="fa fa-fw fa-star"></i>
+										CED18I034
+									</strong>
+								</h2>
+								<div class="mc-content">
+									<div class="img-container">
+										<img class="img-responsive" src="http://u.lorenzoferrara.net/marlenesco/material-card/thumb-clint-eastwood.jpg">
+									</div>
+									<div class="mc-description">
+										<h4><b>Hobbies: </b>Playing football, Writing poems and short stories, Reading novels, Taking part in coding competitions</h4>
+										<br>
+										<h4><b>Interests: </b></h4>
+									</div>
+								</div>
+								<a class="mc-btn-action">
+									<i class="fa fa-bars"></i>
+								</a>
+								<div class="mc-footer">
+									<a href="https://www.facebook.com/mridulharish" class="fa fa-fw fa-facebook"></a>
+									<a href="https://www.instagram.com/mridul21harish/" class="fa fa-fw fa-instagram"></a>
+									<a href="#" class="fa fa-fw fa-linkedin"></a>
+									<a href="mailto:mridulharish21@gmail.com" class="fa fa-fw fa-envelope-o"></a>
+									<a href="tel:9871801172" class="fa fa-fw fa-phone"></a>
+								</div>
+							</article>
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<article class="material-card Deep-Purple">
+								<h2>
+									<span>Nikunj Maheshwari</span>
+									<strong>
+										<i class="fa fa-fw fa-star"></i>
+										CED18I038
+									</strong>
+								</h2>
+								<div class="mc-content">
+									<div class="img-container">
+										<img class="img-responsive" src="{% static 'images/sai.jpg' %}">
+									</div>
+									<div class="mc-description">
+										<h4><b>Hobbies: </b>Web Development, Gaming, Coding, Sketching</h4>
+										<br>
+										<h4><b>Interests: </b></h4>
+									</div>
+								</div>
+								<a class="mc-btn-action">
+									<i class="fa fa-bars"></i>
+								</a>
+								<div class="mc-footer">
+									<a href="https://www.facebook.com/nikunj.maheshwari.98" class="fa fa-fw fa-facebook"></a>
+									<a href="https://www.instagram.com/nikunj.vm/" class="fa fa-fw fa-instagram"></a>
+									<a href="#" class="fa fa-fw fa-linkedin"></a>
+									<a href="mailto:nikunjmaheshwari200@gmail.com" class="fa fa-fw fa-envelope-o"></a>
+									<a href="tel:6354597800" class="fa fa-fw fa-phone"></a>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+					</div>
+				
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<article class="material-card Indigo">
+								<h2>
+									<span>Samarth Sudarshan Inamdar</span>
+									<strong>
+										<i class="fa fa-fw fa-star"></i>
+										CED18I045
+									</strong>
+								</h2>
+								<div class="mc-content">
+									<div class="img-container">
+										<img class="img-responsive" src="{% static 'images/samarth.jfif' %}">
+									</div>
+									<div class="mc-description">
+										<h4><b>Hobbies: </b>Listening to music, Cooking, Playing cricket, Coding, Gaming</h4>
+										<br>
+										<h4><b>Interests: </b></h4>
+									</div>
+								</div>
+								<a class="mc-btn-action">
+									<i class="fa fa-bars"></i>
+								</a>
+								<div class="mc-footer">
+									<a href="https://www.facebook.com/sam.inamdar16" class="fa fa-fw fa-facebook"></a>
+									<a href="https://www.instagram.com/samarth_inamdar/" class="fa fa-fw fa-instagram"></a>
+									<a href="https://www.linkedin.com/in/samarth-inamdar-ab7778197/" class="fa fa-fw fa-linkedin"></a>
+									<a href="mailto:inamdarsamarth1999@gmail.com" class="fa fa-fw fa-envelope-o"></a>
+									<a href="tel:9819142157" class="fa fa-fw fa-phone"></a>
+								</div>
+							</article>
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-12">
+							<article class="material-card Blue-Grey">
+								<h2>
+									<span>Vinayak Sethi</span>
+									<strong>
+										<i class="fa fa-fw fa-star"></i>
+										COE18I061
+									</strong>
+								</h2>
+								<div class="mc-content">
+									<div class="img-container">
+										<img class="img-responsive" src="{% static 'images/sai.jpg' %}">
+									</div>
+									<div class="mc-description">
+										<h4><b>Hobbies: </b>Playing badminton, Reading books, Coding</h4>
+										<br>
+										<h4><b>Interests: </b>Data Science, Coding and Management Studies</h4>
+									</div>
+								</div>
+								<a class="mc-btn-action">
+									<i class="fa fa-bars"></i>
+								</a>
+								<div class="mc-footer">
+									<a href="https://www.facebook.com/vinayak.sethi.39" class="fa fa-fw fa-facebook"></a>
+									<a href="https://www.instagram.com/vinayak__sethi/" class="fa fa-fw fa-instagram"></a>
+									<a href="https://www.linkedin.com/in/vinayak-sethi-9b420817a/" class="fa fa-fw fa-linkedin"></a>
+									<a href="mailto:sethivinayak14600@gmail.com" class="fa fa-fw fa-envelope-o"></a>
+									<a href="tel:6369434232" class="fa fa-fw fa-phone"></a>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+						<div class="col-md-4 col-sm-6 col-xs-12"></div>
+					</div>
+				</div>
+			</section>
+		</div>
 
-<a href="../">
-  <div class="circles">
-    <div></div>
-    <div></div>
-    <div></div>
-    <span></span>
+		<div class="contactus1">
+			<p><font size="6" face="Bitsumishi" color="black">
+				“The secret of success is to do the common thing<br> uncommonly well.”
+			</font><br><br></p>
+		</div>
+		
+		<div class="contactus2">
+			<p><font size="6" face="Bitsumishi" color="black">
+				“The way to get started is to quit talking and begin doing.”
+			</font><br><br></p>
+		</div>
+		
+		<div class="contactus3">
+			<p><font size="6" face="Bitsumishi" color="black">
+				“Do not go where the path may lead,<br> go instead where there is no
+				path and leave a trail.”
+			</font><br><br></p>
+		</div>
+		
+		<div class="contactus4">
+			<p><font size="6" face="Bitsumishi" color="black">
+				“The only impossible journey is the one you never begin.”
+			</font><br><br></p>
+		</div>
+		
+		<div class="contactus5">
+			<p><font size="6" face="Bitsumishi" color="black">
+				“Tell me and I forget, teach me and I remember,<br> involve me and I learn.”
+			</font><br><br></p>
+		</div>
+		 
+        <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <script>
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 100) {
+                        $('#scroll').fadeIn();
+                    } else {
+                        $('#scroll').fadeOut();
+                    }
+                });
+                $('#scroll').click(function(){
+                    $("html, body").animate({ scrollTop: 0 }, 600);
+                    return false;
+                });
+			});
+			
+			$(function () {
+				$('.material-card > .mc-btn-action').click(function () {
+					var card = $(this).parent('.material-card');
+					var icon = $(this).children('i');
+					icon.addClass('fa-spin-fast');
 
-  </div>
+					if (card.hasClass('mc-active')) {
+					card.removeClass('mc-active');
 
-    <div class="text">SHADOW</div>
-    <pre>        </pre>
-</a>
+					window.setTimeout(function () {
+						icon.
+						removeClass('fa-arrow-left').
+						removeClass('fa-spin-fast').
+						addClass('fa-bars');
 
-<div class="kaushik">
-   <img style="width:50%;height:100%;" src="{% static 'images/kaushik.png' %}">
-</div>
+					}, 800);
+					} else {
+					card.addClass('mc-active');
 
-<div class="mridul">
-   <img style="width:85%;height:100%;" src="{% static 'images/mridul.png' %}">
-</div>
+					window.setTimeout(function () {
+						icon.
+						removeClass('fa-bars').
+						removeClass('fa-spin-fast').
+						addClass('fa-arrow-left');
 
-<div class="nikunj">
-    <img style="width:55%;height:100%;" src="{% static 'images/nikunj.png' %}">
-</div>
-
-<div class="samarth">
-    <img style="width:90%;height:100%;" src="{% static 'images/samarth.png' %}">
-</div>
-
-<div class="vinayak">
-    <img style="width:55%;height:100%;" src="{% static 'images/vinayak.png' %}">
-</div>
-
-<div class="border">
-  <img style="width:100%;height:180%;" src="{% static 'images/bg4.png' %}">
-</div>
-
-<div class="contactus1">
-  <p><font size="32" face="Bitsumishi" color="brown"> Sai Kaushik, CED18I044</font><br><br>
-    <font size="6">“The secret of success is to do the common thing uncommonly well.”</font><br><br></p>
-</div>
-
-<div class="contactus2">
-  <p><font size="32" face="Bitsumishi" color="brown">	 Mridul Harish, CED18I034</font><br><br>
-    <font size="6">“The way to get started is to quit talking and begin doing.”</font><br><br></p>
-</div>
-
-<div class="contactus3">
-  <p><font size="32" face="Bitsumishi" color="brown">	Nikunj Maheshwari, CED18I038</font><br><br>
-    <font size="6">“Do not go where the path may lead,<br> go instead where there is no
-     path and leave a trail.”</font><br><br></p>
-</div>
-
-<div class="contactus4">
-  <p><font size="32" face="Bitsumishi" color="brown">	Samarth Inamdar, CED18I045</font><br><br>
-    <font size="6">“The only impossible journey is the one you never begin.”</font><br><br></p>
-</div>
-
-<div class="contactus5">
-  <p><font size="32" face="Bitsumishi" color="brown"> Vinayak Sethi, COE18B061</font><br><br>
-    <font size="6">“Tell me and I forget, teach me and I remember,<br> involve me and I learn.”</font><br><br></p>
-</div>
-
-<a href="#" id="scroll" style="display: none;"><span></span></a>
-<script>
-$(document).ready(function(){
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 100) {
-            $('#scroll').fadeIn();
-        } else {
-            $('#scroll').fadeOut();
-        }
-    });
-    $('#scroll').click(function(){
-        $("html, body").animate({ scrollTop: 0 }, 600);
-        return false;
-    });
-});
-</script>
-
-
-  </body>
+					}, 800);
+					}
+				});
+			});
+        </script>
+    </body>
 </html>

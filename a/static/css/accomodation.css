@@ -3,135 +3,156 @@ body{
 }
 
 html{
-  height: 200%;
+  height: 300vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 ::-webkit-scrollbar{
   width: 0px;
   background: transparent;
 }
 
-.para{
-
-  position: absolute;
-  top: 60%;
-  left: 25%;
-  right:20%;
-  background:#000000;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family:Chalkduster;
-  font-size: 145%;
-  font-style: italic;
-  z-index: 0;
-}
-
-.hostel{
-  position: absolute;
-  width:100%;
-  top: 90%;
-  left: 26%;
-  z-index: 0;
-}
-
-.map{
-  position: absolute;
-  top: 215%;
-  left: 22%;
-  z-index: 2;
-}
-
 h1{
   position: absolute;
-  width: 100%;
   top: 40%;
   left: 25%;
-  font-size: 20px;
   background: -webkit-linear-gradient(#8e2de2,#4a00e0  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: Bronx;
-  font-size: 500%;
-  font-style: italic;
+  font-size: 5.5vw;
   z-index: 0;
 }
 
-.circles{
-  position: absolute;
-  top: 1%;
-  left: 1%;
-  color: #141414;
+.menu{
+background-size: cover;
+position: absolute;
+right: 7.5%;
+top: 20%;
+  display: flex;
+  flex-direction: row-reverse;
+font-family: Alternity;
+font-size: 1.6vw;
+width: 85vw;
+z-index: 5;
 }
 
-.text{
-  position: absolute;
-  top: 30%;
-  left: 3%;
-  color: #141414;
+ul{
+border-radius: 25px;
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
 }
 
-.border{
-  position: absolute;
-  height: 190%;
-  top: 0%;
-  left: 0%;
-  opacity: 1;
-  z-index: 1;
+li{
+float: left;
 }
 
-li a {
-  display: block;
-  color: #5D001E;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 125%;
+li a{
+display: block;
+color : #ffffff;
+text-align: center;
+padding: 14px 16px;
+border-radius: 25px;
+text-decoration: none;
+font-size: 100%;
 }
 
 li a:hover{
   background-image: linear-gradient(to right, #c9ffbf, #ffafbd);
 }
 
-#menu{
-  top: 20%;
-  right: 8%;
-  background-size: cover;
-  flex-direction: row-reverse;
-  display: flex;
+.border{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.border-img{
+  width: 100.5vw;
+  height: 350vh;
+}
+
+.para{
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  width: 80vw;
+  background:#000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:Chalkduster;
+  font-size: 145%;
+  text-align: justify;
+  z-index: 0;
+}
+
+.para2{
+  position: absolute;
+  top: 190%;
+  left: 10%;
+  width: 80vw;
+  background:#000000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family:Chalkduster;
+  font-size: 145%;
+  text-align: justify;
+  z-index: 0;
+}
+
+.hostel{
+  position: absolute;
+  top: 100%;
+  left: 26%;
+  z-index: 0;
+}
+
+.map{
+  position: absolute;
+  top: 230%;
+  left: 12.5%;
+  z-index: 2;
+}
+
+.map1{
+  width: 75vw;
+  height: 75vh;
+  border:0;
 }
 
 #scroll {
-    position:fixed;
-    right:10px;
-    bottom:10px;
-    cursor:pointer;
-    width:50px;
-    height:50px;
-    background-color: black;
-    text-indent:-9999px;
-    display:none;
-    -webkit-border-radius:60px;
-    -moz-border-radius:60px;
-    border-radius:60px;
-    z-index: 5;
+  position:fixed;
+  right:10px;
+  bottom:10px;
+  cursor:pointer;
+  width:50px;
+  height:50px;
+  background-color: black;
+  text-indent:-9999px;
+  display:none;
+  -webkit-border-radius:60px;
+  -moz-border-radius:60px;
+  border-radius:60px;
+  z-index: 5;
 }
 
 #scroll span {
-    position:absolute;
-    top:50%;
-    left:50%;
-    margin-left:-8px;
-    margin-top:-12px;
-    height:0;
-    width:0;
-    border:8px solid transparent;
-    border-bottom-color:#ffffff;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-8px;
+  margin-top:-12px;
+  height:0;
+  width:0;
+  border:8px solid transparent;
+  border-bottom-color:#ffffff;
 }
 
 #scroll:hover {
-    background-color:#555;
-    opacity:1;filter:"alpha(opacity=100)";
-    -ms-filter:"alpha(opacity=100)";
+  background-color:#555;
+  opacity:1;filter:"alpha(opacity=100)";
+  -ms-filter:"alpha(opacity=100)";
 }

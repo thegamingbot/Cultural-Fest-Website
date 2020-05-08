@@ -1,80 +1,94 @@
 body{
-  background-image: linear-gradient(to right, #833ab4,#fd1d1d,#fcb045);
+	background-image: linear-gradient(to right, #833ab4,#fd1d1d,#fcb045);
 }
 
 html{
-  height: 180%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+    height: 300vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
 ::-webkit-scrollbar{
-  width: 0px;
-  background: transparent;
+    width: 0px;
+    background: transparent;
 }
 
 h1{
-  position: absolute;
-  width: 50%;
-  top: 40%;
-  left: 42.5%;
-  font-family: Billabong;
-  background: -webkit-linear-gradient(#22c1c3, #fdbb2d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 600%;
-  font-style: italic;
-  z-index: 0;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    width: 100vw;
+    text-align: center;
+	font-family: Billabong;
+	background: -webkit-linear-gradient(#22c1c3, #fdbb2d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5.5vw;
+    z-index: 0;
 }
 
-.circles{
-  position: absolute;
-  top: 1%;
-  left: 1%;
+.menu{
+	background-size: cover;
+	position: absolute;
+	right: 7.5%;
+	top: 20%;
+    display: flex;
+    flex-direction: row-reverse;
+	font-family: Alternity;
+	font-size: 1.6vw;
+	width: 85vw;
+	z-index: 5;
 }
 
-.text{
-  position: absolute;
-  top: 30%;
-  left: 3%;
+ul{
+	border-radius: 25px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+  
+li{
+	float: left;
+}
+  
+li a{
+	display: block;
+	color : #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	border-radius: 25px;
+	text-decoration: none;
+	font-size: 100%;
+}
+  
+li a:hover{
+    background-image: linear-gradient(to right, #ff4e50,#f9d423);
 }
 
 .border{
-  position: absolute;
-  height: 170%;
-  top: 0%;
-  left: 0%;
-  opacity: 1;
-  z-index: 1;
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }
 
-li a {
-  display: block;
-  color: #ffffff;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 125%;
+.border-img{
+    width: 100.5vw;
+    height: 350vh;
 }
 
-li a:hover{
-  background-image: linear-gradient(to right, #ff4e50,#f9d423);
+.img1{
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    width: 50vw;
 }
 
-#menu{
-  top: 20%;
-  right: 8%;
-  background-size: cover;
-  flex-direction: row-reverse;
-  display: flex;
-}
-
-
-#spons{
-  position: absolute;
-  z-index: 2;
-  top: 60%;
-  left: 30%;
+.img2{
+    position: absolute;
+    top: 225%;
+    left: 25%;
+    width: 50vw;
 }
 
 #scroll {
