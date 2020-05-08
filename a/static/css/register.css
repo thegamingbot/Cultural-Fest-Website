@@ -176,7 +176,7 @@ li a:hover{
 	cursor: pointer;
 	outline: 0;
 	align-self: flex-start;
-	border-radius: 5px;
+	border-radius: 0px;
     z-index: 5;
   }
 

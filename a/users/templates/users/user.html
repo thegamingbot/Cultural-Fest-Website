@@ -46,7 +46,7 @@
             src: local('../static/fonts/Avengeance'),
                 url('../static/fonts/Avengeance.ttf') format("truetype");
             }
-            
+
 			@font-face {
 			font-family: VampireWars;
 			src: local('../static/fonts/VampireWars'),
@@ -71,12 +71,12 @@
             </div>
             <div class="text">SHADOW</div>
         </a>
-        
+
         <a href="#" id="scroll" style="display: none;"><span></span></a>
 
         <p class="Hi">Hi, {{user.username}}</p>
         <a href="../" class="logout">Logout</a>
-        
+
         <form method = POST class="Cart">
             {% csrf_token %}
             <button class="btn btn-light" name = "cart"><p style="font-family: Chopsic; font-size: 20px;">CART</p></button>
@@ -86,7 +86,7 @@
         <button class="green" onclick="openPage('All_Events', this)">All Events</button>
 
         <div id="Registered_Events" class="tabcontent">
-            <p class="x">Accomodation and Registered Events</p><br><br><br>
+            <p class="x">Accomodation   and   Registered   Events</p><br><br><br>
             <div class="form">
                 <ul>
                     {% for event in x %}
@@ -119,7 +119,7 @@
 		{% if messages %}
             {% for message in messages %}
                 {% if message.tags %}
-                    <script>alert("{{ message }}")</script> 
+                    <script>alert("{{ message }}")</script>
                 {% endif %}
             {% endfor %}
         {% endif %}
