@@ -39,28 +39,13 @@
     <body>
         <div class='wrapper'>
             <div class='header'>
-                <p class='title'>Invoice # {{user.id}} </p>
+                <p class='title'>Invoice # {{invoice_id}} </p>
             </div>
         <div>
         <div class='details'>
-            Bill to: {{user.first_name}} {{user.last_name}}<br/>
-            Amount:  {{y}}<br/>
+            Bill to: {{customer_name}}<br/>
+            Amount:  {{amount}}<br/>
             <hr class='hrItem' />
-        </div>
-        <div>
-            <ul>
-                {% for event in x %}
-                    <li>{{event}}</li>
-                {% empty %}
-                    <li>No events registered yet.</li>
-                {% endfor %}
-                {% if registered.Accomodation %}
-                    <br><br>
-                    <li>Name: Accomodation | Cost: 100</li>
-                {% else %}
-                    <li></li>
-                {% endif %}
-            </ul>
         </div>
     </div>
     </div>

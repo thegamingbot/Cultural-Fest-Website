@@ -111,12 +111,12 @@ html{
 }
 
 .x{
-    font-family: Avengeance;
-    font-size: 3vw;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 60px;
     color: white;
 }
 
 input[type="checkbox"]{
-    width: 30px;
-    height: 30px;
+    width: 30px; /*Desired width*/
+    height: 30px; /*Desired height*/
 }
