@@ -175,25 +175,13 @@ def cart(request, username, id):
     }
     return render(request, "users/cart.html", context)
 
-def genrate_pdf(request, username, id, *args, **kwargs):
+def genrate_pdf(request, *args, **kwargs):
     template=get_template("pdf/bill.html")
-    user = User.objects.get(username=username)
-    registered = Registered.objects.get(Name=username)
-    x = registered.Events.all()
-    y = 0
-    for a in x:
-        y = y + a.Cost
-    
-    if registered.Accomodation:
-        y = y + 100
-
     context={
-        "user":user,
-        "registered":registered,
-        "x":x,
-        "y":y,
+    "invoice_id":123,
+    "customer_name":"Nikunj",
+    "amount":123,
     }
     html=template.render(context)
     pdf=render_to_pdf("pdf/bill.html",context)
-
     return HttpResponse(pdf,content_type="application/pdf")

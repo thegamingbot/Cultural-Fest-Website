@@ -86,7 +86,7 @@
         <button class="green" onclick="openPage('All_Events', this)">All Events</button>
 
         <div id="Registered_Events" class="tabcontent">
-            <p class="x">Accomodation   and   Registered   Events</p><br><br><br>
+            <p class="x"><u></u>Accomodation   and   Registered   Events</u></p><br><br><br>
             <div class="form">
                 <ul>
                     {% for event in x %}
@@ -101,12 +101,16 @@
                     {% else %}
                         <li></li>
                     {% endif %}
-                </ul>
+                </ul><br><br>
+                <form method = POST>
+                    {% csrf_token %}
+                    <button class="btn btn-outline-dark" name="print" style="position: relative;"><p style="font-size:x-large; font-family: Isle; color: black;">Print your invoice</p></button>
+                </form>
             </div>
         </div>
 
         <div id="All_Events" class="tabcontent">
-            <p class="x">Accomodation and All Events</p><br><br><br>
+            <p class="x"><u></u>Accomodation and All Events</u></p><br><br><br>
             <form method = POST>
                 {% csrf_token %}
                 <div class="form">
@@ -123,7 +127,24 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
+        <div class="loader-wrapper">
+    		<a href="../">
+    			<div class="circles">
+    				<div></div>
+    				<div></div>
+    				<div></div>
+    				<span></span>
+    			</div>
+    			<div class="text">SHADOW</div>
+    		</a>
+		    <span class="loader"><span class="loader-inner"></span></span>
+		</div>
 
+		<script>
+			$(window).on("load", function(){
+				$(".loader-wrapper").fadeOut()
+			});
+		</script>
         <script>
             function openPage(pageName,elmnt) {
             var i, tabcontent, tablinks;

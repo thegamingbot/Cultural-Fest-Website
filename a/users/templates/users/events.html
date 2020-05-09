@@ -51,13 +51,13 @@
 
 	</head>
 	<body>
-		
+
 		<h1 class="heading">Events</h1>
 
         <div class="border">
             <img class="border-img" src="{% static 'images/bg6.png' %}">
 		</div>
-		
+
 		<div>
             <a href="../">
                 <div class="circles">
@@ -69,7 +69,7 @@
                 <div class="text">SHADOW</div>
             </a>
 		</div>
-		
+
 		<div class="menu">
             <ul>
                 <li><a href="../accomodation">ACCOMMODATION</a></li>
@@ -80,7 +80,7 @@
                 <li><a href="../contact_us">CONTACT US</a></li>
             </ul>
 		</div>
-		
+
 		<div class="Gaming" style="width:30%">
 			<img style="width:80%;" src="{% static 'images/Game.png' %}">
 			<button class="button" style="vertical-align:middle" data-toggle="modal" data-target="#gaming"><span>Gaming </span></button>
@@ -115,7 +115,7 @@
 			<img style="width:80%;" src="{% static 'images/Dance.png' %}">
 			<button class="button" style="vertical-align:middle" data-toggle="modal" data-target="#dance"><span>Dance </span></button>
 			<div class="content">
-				
+
 			</div>
 		</div>
 
@@ -267,7 +267,7 @@
 							IIITDM Idol : Reach the highest tone possible and let your inner idol shine through.
 							“Prizes worth 7k”<br><br>
 							Battle of Bands : "Get ready for the ultimate battle of supremacy amongst the best bands in the town
-							as they amaze you, enthral you and completely baffle with their amazing performances that'll keep you 
+							as they amaze you, enthral you and completely baffle with their amazing performances that'll keep you
 							humming to their tunes till the next day. Prizes worth 10k"
 						</p>
 					</div>
@@ -279,7 +279,24 @@
 		</div>
 
 		<a href="#" id="scroll" style="display: none;"><span></span></a>
+        <div class="loader-wrapper">
+    		<a href="../">
+    			<div class="circles">
+    				<div></div>
+    				<div></div>
+    				<div></div>
+    				<span></span>
+    			</div>
+    			<div class="text">SHADOW</div>
+    		</a>
+		    <span class="loader"><span class="loader-inner"></span></span>
+		</div>
 
+		<script>
+			$(window).on("load", function(){
+				$(".loader-wrapper").fadeOut()
+			});
+		</script>
 		<script>
 			$(document).ready(function(){
 				$(window).scroll(function(){

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class=" -webkit-">
 	<head>
-		
+
 		{% load static %}
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>Fest2021</title>
+		<title>Fest2020</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/background.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/logo.css' %}">
@@ -52,7 +52,7 @@
 		</style>
 	</head>
 	<body>
-		
+
 		<canvas width="100vw" height="100vh"></canvas>
 		<canvas width="100vw" height="100vh"></canvas>
 
@@ -64,7 +64,6 @@
 				<span></span>
 			</div>
 			<div class="text">SHADOW</div>
-			<pre>        </pre>
 		</a>
 
 		<div class="bg">
@@ -85,23 +84,23 @@
 		<div class="hero1">
 			<img class="h1-img" src="{% static 'images/hero1.png' %}">
 		</div>
-  
+
 		<div class="hero2">
 			<img class="h2-img" src="{% static 'images/hero2.png' %}">
 		</div>
-  
+
 		<div class="hero3">
 			<img class="h3-img" src="{% static 'images/hero3.png' %}">
 		</div>
-  
+
 		<div class="hero4">
 			<img class="h4-img" src="{% static 'images/hero4.png' %}">
 		</div>
-  
+
 		<div class="bgh">
 			<img class="bgh1-img" src="{% static 'images/10.png' %}">
 		</div>
-  
+
 		<div class="bgh2">
 			<img class="bgh2-img" src="{% static 'images/3.png' %}">
 		</div>
@@ -153,11 +152,29 @@
 		<a href="http://www.linkedin.com" class="fa fa-linkedin"></a>
 		<a href="http://www.youtube.com" class="fa fa-youtube"></a>
 		<a href="http://www.instagram.com" class="fa fa-instagram"></a>
-		
+
 		<p id="demo"></p>
-		
+
 		<a href="#" id="scroll" style="display: none;"><span></span></a>
 
+		<div class="loader-wrapper">
+    		<a href="../">
+    			<div class="circles">
+    				<div></div>
+    				<div></div>
+    				<div></div>
+    				<span></span>
+    			</div>
+    			<div class="text">SHADOW</div>
+    		</a>
+		    <span class="loader"><span class="loader-inner"></span></span>
+		</div>
+
+		<script>
+			$(window).on("load", function(){
+				$(".loader-wrapper").fadeOut()
+			});
+		</script>
 		<script>
 		$(document).ready(function(){
 			$(window).scroll(function(){

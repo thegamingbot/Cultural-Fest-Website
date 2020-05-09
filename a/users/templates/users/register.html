@@ -143,22 +143,40 @@
 		{% if messages %}
 			{% for message in messages %}
 				{% if message.tags %}
-					<script>alert("{{ message }}")</script> 
+					<script>alert("{{ message }}")</script>
 				{% endif %}
 			{% endfor %}
 		{% endif %}
 
 		<div class="info">
 			<p class="down">
-				Register here to enter the world of Shadow and receive your very own unique CF passport, 
-				which will come to your use for participation or entry to the activities going on 
+				Register here to enter the world of Shadow and receive your very own unique CF passport,
+				which will come to your use for participation or entry to the activities going on
 				during Shadow.<br>
-				<br>On receiving the CF passport, you'll also need to go over to the competitions 
+				<br>On receiving the CF passport, you'll also need to go over to the competitions
 				page and register there for the specific competition of your choice.
 			</p>
 		</div>
 
         <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <div class="loader-wrapper">
+    		<a href="../">
+    			<div class="circles">
+    				<div></div>
+    				<div></div>
+    				<div></div>
+    				<span></span>
+    			</div>
+    			<div class="text">SHADOW</div>
+    		</a>
+		    <span class="loader"><span class="loader-inner"></span></span>
+		</div>
+
+		<script>
+			$(window).on("load", function(){
+				$(".loader-wrapper").fadeOut()
+			});
+		</script>
         <script>
             $(document).ready(function(){
                 $(window).scroll(function(){

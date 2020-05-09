@@ -13,19 +13,19 @@
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
         <style>
 			@import url('https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap');
-	
+
 			@font-face {
 			  font-family: TSA;
 			  src: local('../static/fonts/TSA'),
 				   url('../static/fonts/TSA.ttf') format("truetype");
 			}
-	
+
 			@font-face {
 			  font-family: Alternity;
 			  src: local('Alternity'),
 				   url('../static/fonts/Alternity.ttf') format("truetype");
 			}
-	
+
 			@font-face {
 			  font-family: Billabong;
 			  src: local('../static/fonts/Billabong'),
@@ -65,11 +65,29 @@
         </div>
 
 		<h1>Sponsers</h1>
-		
+
 		<img class="img1" src="{% static 'images/spons2.png' %}" alt="">
 		<img class="img2" src="{% static 'images/spons3.png' %}" alt="">
 
         <a href="#" id="scroll" style="display: none;"><span></span></a>
+        <div class="loader-wrapper">
+    		<a href="../">
+    			<div class="circles">
+    				<div></div>
+    				<div></div>
+    				<div></div>
+    				<span></span>
+    			</div>
+    			<div class="text">SHADOW</div>
+    		</a>
+		    <span class="loader"><span class="loader-inner"></span></span>
+		</div>
+
+		<script>
+			$(window).on("load", function(){
+				$(".loader-wrapper").fadeOut()
+			});
+		</script>
         <script>
             $(document).ready(function(){
                 $(window).scroll(function(){

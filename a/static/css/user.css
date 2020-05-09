@@ -111,12 +111,86 @@ html{
 }
 
 .x{
-    font-family: Avengeance;
-    font-size: 3vw;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 60px;
     color: white;
 }
 
 input[type="checkbox"]{
-    width: 30px;
-    height: 30px;
+    width: 30px; /*Desired width*/
+    height: 30px; /*Desired height*/
+}
+
+.loader-wrapper{
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-image:linear-gradient(to right, #ff416c, #ff4b2b);
+    z-index:100;
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
 }

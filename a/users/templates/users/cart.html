@@ -69,7 +69,8 @@
             <span></span>
         </div>
         <div class="text">SHADOW</div>
-        
+
+
         <div style="position: absolute; top: 40%; left: 10%; z-index: 2;">
             <p class="x">Items in your cart...</p>
             <form method = POST enctype="multipart/form-data">
@@ -98,10 +99,28 @@
 		{% if messages %}
             {% for message in messages %}
                 {% if message.tags %}
-                    <script>alert("{{ message }}")</script> 
+                    <script>alert("{{ message }}")</script>
                 {% endif %}
             {% endfor %}
         {% endif %}
+        <div class="loader-wrapper">
+    		<a href="../">
+    			<div class="circles">
+    				<div></div>
+    				<div></div>
+    				<div></div>
+    				<span></span>
+    			</div>
+    			<div class="text">SHADOW</div>
+    		</a>
+		    <span class="loader"><span class="loader-inner"></span></span>
+		</div>
+
+		<script>
+			$(window).on("load", function(){
+				$(".loader-wrapper").fadeOut()
+			});
+		</script>
 
         <script>
             $(document).ready(function(){
