@@ -33,6 +33,16 @@ def register(request):
         form1 = RegisterForm(request.POST)
         if form1.is_valid():
             form1.save()
+            username = form1.cleaned_data.get('username')
+            cart = Cart(Name=username, Accomodation=False)
+            cart.save()
+            registered = Registered(Name=username, Accomodation=False)
+            registered.save()
+            notregistered = notRegistered(Name=username, Accomodation=True)
+            notregistered.save()
+            r = Event.objects.all()
+            for event in r:
+                notregistered.Events.add(event)
             messages.success(request, 'Registered.. Voila!!')
     if request.method == "POST" and 'log_in' in request.POST:
         form2 = AuthenticationForm(request=request, data=request.POST)
@@ -59,23 +69,28 @@ def sponsors(request):
 
 def user(request, username, id):
     user = User.objects.get(username = username)
-    registered = Registered.objects.get(Name=username)
     try:
+        registered = Registered.objects.get(Name=username)
+        cart = Cart.objects.get(Name=username)
         notregistered = notRegistered.objects.get(Name=username)
+    except Registered.DoesNotExist:
+        registered = Registered(Name=username, Accomodation=False)
+        registered.save()
     except notRegistered.DoesNotExist:
         notregistered = notRegistered(Name=username, Accomodation=True)
         notregistered.save()
         r = Event.objects.all()
         for event in r:
             notregistered.Events.add(event)
+    except Cart.DoesNotExist:
+        cart = Cart(Name=username, Accomodation=False)
+        cart.save()
+
     x = registered.Events.all()
     if user.id != id:
         raise Http404("Please login through the Register page..")
+    
     event = Event.objects.all()
-    try:
-        cart = Cart.objects.get(Name=username)
-    except Cart.DoesNotExist:
-        cart = None
     
     form = EventForm(username, instance=cart)
 
@@ -87,7 +102,7 @@ def user(request, username, id):
         if form.is_valid():
             form.save()
             q = Cart.objects.filter(Name=username)
-            y = Registered.objects.get(Name=username)
+            y = registered
             y.Cart.set(q)
             y.save()
             messages.success(request, 'Items added to your cart. You are being redirected to the cart right now.')
@@ -111,7 +126,7 @@ def cart(request, username, id):
         cart = Cart.objects.get(Name=username)
         registered = Registered.objects.get(Name=username)
     except Cart.DoesNotExist:
-        cart = None
+        cart = Cart(Name=username, Accomodation=False)
     except Registered.DoesNotExist:
         registered = None
 
@@ -143,7 +158,7 @@ def cart(request, username, id):
         return HttpResponseRedirect(reverse("user", args=(username, user.id)))
     
     x = 0
-    z = Cart.objects.get(Name=username)
+    z = cart
     y = z.Events.all()
     for a in y:
         x = x + a.Cost
@@ -160,13 +175,25 @@ def cart(request, username, id):
     }
     return render(request, "users/cart.html", context)
 
-def genrate_pdf(request, *args, **kwargs):
+def genrate_pdf(request, username, id, *args, **kwargs):
     template=get_template("pdf/bill.html")
+    user = User.objects.get(username=username)
+    registered = Registered.objects.get(Name=username)
+    x = registered.Events.all()
+    y = 0
+    for a in x:
+        y = y + a.Cost
+    
+    if registered.Accomodation:
+        y = y + 100
+
     context={
-    "invoice_id":123,
-    "customer_name":"Nikunj",
-    "amount":123,
+        "user":user,
+        "registered":registered,
+        "x":x,
+        "y":y,
     }
     html=template.render(context)
     pdf=render_to_pdf("pdf/bill.html",context)
+
     return HttpResponse(pdf,content_type="application/pdf")

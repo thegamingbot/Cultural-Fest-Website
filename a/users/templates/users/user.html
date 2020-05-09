@@ -42,10 +42,10 @@
 			}
 
             @font-face {
-      			  font-family: Alternity;
-      			  src: local('../static/fonts/Alternity'),
-      				   url('../static/fonts/Alternity.ttf') format("truetype");
-      			}
+            font-family: Avengeance;
+            src: local('../static/fonts/Avengeance'),
+                url('../static/fonts/Avengeance.ttf') format("truetype");
+            }
 
 			@font-face {
 			font-family: VampireWars;
@@ -86,7 +86,7 @@
         <button class="green" onclick="openPage('All_Events', this)">All Events</button>
 
         <div id="Registered_Events" class="tabcontent">
-            <p class="x"><u>Accomodation   and   Registered   Events</u></p><br><br><br>
+            <p class="x">Accomodation   and   Registered   Events</p><br><br><br>
             <div class="form">
                 <ul>
                     {% for event in x %}
@@ -106,7 +106,7 @@
         </div>
 
         <div id="All_Events" class="tabcontent">
-            <p class="x"><u>Accomodation and All Events</u></p><br><br><br>
+            <p class="x">Accomodation and All Events</p><br><br><br>
             <form method = POST>
                 {% csrf_token %}
                 <div class="form">
