@@ -38,7 +38,7 @@ def register(request):
             cart.save()
             registered = Registered(Name=username, Accomodation=False)
             registered.save()
-            notregistered = notRegistered(Name=username, Accomodation=true)
+            notregistered = notRegistered(Name=username, Accomodation=True)
             notregistered.save()
             r = Event.objects.all()
             for event in r:
@@ -175,13 +175,25 @@ def cart(request, username, id):
     }
     return render(request, "users/cart.html", context)
 
-def genrate_pdf(request, *args, **kwargs):
+def genrate_pdf(request, username, id, *args, **kwargs):
     template=get_template("pdf/bill.html")
+    user = User.objects.get(username=username)
+    registered = Registered.objects.get(Name=username)
+    x = registered.Events.all()
+    y = 0
+    for a in x:
+        y = y + a.Cost
+    
+    if registered.Accomodation:
+        y = y + 100
+
     context={
-    "invoice_id":123,
-    "customer_name":"Nikunj",
-    "amount":123,
+        "user":user,
+        "registered":registered,
+        "x":x,
+        "y":y,
     }
     html=template.render(context)
     pdf=render_to_pdf("pdf/bill.html",context)
+
     return HttpResponse(pdf,content_type="application/pdf")
