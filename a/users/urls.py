@@ -17,7 +17,7 @@ urlpatterns = [
     path("<username>/<int:id>", views.user, name="user"),
     path("<username>/<int:id>/cart/", views.cart, name='cart'),
     path("<username>/<id>", views.user, name="user"),
-    path("pdf/",views.genrate_pdf, name="pdf"),
+    path("<username>/<id>/pdf/",views.genrate_pdf, name="pdf"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

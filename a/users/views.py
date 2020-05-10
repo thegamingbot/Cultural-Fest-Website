@@ -7,10 +7,12 @@ from .forms import RegisterForm, EventForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from .models import Event, Cart, Registered, notRegistered
+from .models import Event, Cart, Registered, notRegistered, invoice
 from django.views.generic import View
 from .utils import render_to_pdf
 from django.template.loader import get_template
+import datetime
+from django.core.mail import EmailMessage
 
 # Create your views here.
 
@@ -89,10 +91,13 @@ def user(request, username, id):
     x = registered.Events.all()
     if user.id != id:
         raise Http404("Please login through the Register page..")
-    
+
     event = Event.objects.all()
-    
+
     form = EventForm(username, instance=cart)
+
+    if request.method == 'POST' and 'print' in request.POST:
+        return HttpResponseRedirect(reverse("pdf", args=(username, user.id)))
 
     if request.method == 'POST' and 'cart' in request.POST:
         return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
@@ -156,13 +161,13 @@ def cart(request, username, id):
         x.save()
         messages.success(request, 'Items are brought. You are being redirected to the user page right now.')
         return HttpResponseRedirect(reverse("user", args=(username, user.id)))
-    
+
     x = 0
     z = cart
     y = z.Events.all()
     for a in y:
         x = x + a.Cost
-    
+
     if z.Accomodation:
         x = x + 100
 
@@ -175,13 +180,31 @@ def cart(request, username, id):
     }
     return render(request, "users/cart.html", context)
 
-def genrate_pdf(request, *args, **kwargs):
+def genrate_pdf(request, username, id, *args, **kwargs):
     template=get_template("pdf/bill.html")
+    user = User.objects.get(username=username)
+    registered = Registered.objects.get(Name=username)
+    x = registered.Events.all()
+    y = 0
+    for a in x:
+        y = y + a.Cost
+    if registered.Accomodation:
+        y = y + 100
+    date = datetime.date.today()
     context={
-    "invoice_id":123,
-    "customer_name":"Nikunj",
-    "amount":123,
+        "user":user,
+        "registered":registered,
+        "x":x,
+        "y":y,
+        "date":date,
     }
     html=template.render(context)
     pdf=render_to_pdf("pdf/bill.html",context)
-    return HttpResponse(pdf,content_type="application/pdf")
+    a = HttpResponseRedirect(reverse("pdf", args=(username, id)))
+    subject = 'Shadow Cultural Fest Invoice'
+    message = 'Greetings,\n\n     This mail is a confirmation of your payments in Shadow Cultural Fest. Use our website(http://shadowcf.pythonanywhere.com/) to download a copy of the invoice for furture reference. Hope you have all your expectations met here. Please free to mail us at shadow.culturalfest@gmail.com, for any queries.\n\nThank you,\nShadow team.'
+    frommail = 'shadow.culturalfest@gmail.com'
+    tomail = [user.email,]
+    email = EmailMessage(subject, message, frommail, tomail)
+    email.send()
+    return HttpResponse(pdf, content_type="application/pdf")

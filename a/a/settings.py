@@ -137,4 +137,10 @@ STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-LOGIN_REDIRECT_URL = "/{username}"
+LOGIN_REDIRECT_URL = "/{username}/{id}"
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shadow.culturalfest@gmail.com'
+EMAIL_HOST_PASSWORD = 'Shadowcf01'
+EMAIL_USE_TLS = True

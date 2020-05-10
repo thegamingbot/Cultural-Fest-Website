@@ -32,3 +32,11 @@ class notRegistered(models.Model):
     Accomodation = models.BooleanField()
     def __str__(self):
         return f"{self.Name}"
+
+class invoice(models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    pdf = models.FileField(upload_to='pdfs/', null=True, blank=True)
+
+class pdf(models.Model):
+    Name = models.CharField(primary_key=True, max_length = 64)
+    pdf = models.FileField(upload_to='pdfs/', null=True, blank=True)
