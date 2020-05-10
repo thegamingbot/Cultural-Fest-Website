@@ -207,6 +207,6 @@ def genrate_pdf(request, username, id, *args, **kwargs):
     tomail = [user.email,]
     email = EmailMessage(subject, message, frommail, tomail)
     #email.attach_file("static/Images/bill.jpg")
-    #email.attach("users/templates/out.pdf")
+    email.attach_file("out.pdf")
     email.send()
     return HttpResponse(pdf, content_type="application/pdf")

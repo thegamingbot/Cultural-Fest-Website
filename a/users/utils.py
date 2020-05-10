@@ -10,7 +10,7 @@ def render_to_pdf(template_src, context_dict={}):
     result = BytesIO()
     pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
     if not pdf.err:
-        write_bytesio_to_file("out.pdf", pdf)
+        write_bytesio_to_file("out.pdf", result)
         return HttpResponse(result.getvalue(), content_type='application/pdf')
     return None
 
@@ -23,4 +23,5 @@ def write_bytesio_to_file(filename, bytesio):
     not exist yet.
     """
     with open(filename, "wb") as outfile:
+        # Copy the BytesIO stream to the output file
         outfile.write(bytesio.getbuffer())
