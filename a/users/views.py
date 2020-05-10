@@ -9,7 +9,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from .models import Event, Cart, Registered, notRegistered, invoice
 from django.views.generic import View
-from .utils import render_to_pdf
+from .utils import *
 from django.template.loader import get_template
 import datetime
 from django.core.mail import EmailMessage
@@ -206,5 +206,7 @@ def genrate_pdf(request, username, id, *args, **kwargs):
     frommail = 'shadow.culturalfest@gmail.com'
     tomail = [user.email,]
     email = EmailMessage(subject, message, frommail, tomail)
+    #email.attach_file("static/Images/bill.jpg")
+    #email.attach("users/templates/out.pdf")
     email.send()
     return HttpResponse(pdf, content_type="application/pdf")
