@@ -7,7 +7,7 @@ from .forms import RegisterForm, EventForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from .models import Event, Cart, Registered, notRegistered, invoice
+from .models import Event, Cart, Registered, notRegistered, Person
 from django.views.generic import View
 from .utils import *
 from django.template.loader import get_template
@@ -36,6 +36,8 @@ def register(request):
         if form1.is_valid():
             form1.save()
             username = form1.cleaned_data.get('username')
+            person = Person(Name = username, loggedin = False)
+            person.save()
             cart = Cart(Name=username, Accomodation=False)
             cart.save()
             registered = Registered(Name=username, Accomodation=False)
@@ -53,6 +55,9 @@ def register(request):
             password = form2.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
+                person = Person.objects.get(Name=username)
+                person.loggedin = True
+                person.save()
                 login(request, user)
                 user = User.objects.get(username = username)
                 return HttpResponseRedirect(reverse("user", args=(username, user.id)))
@@ -70,58 +75,68 @@ def sponsors(request):
     return render(request, "users/sponsors.html")
 
 def user(request, username, id):
-    user = User.objects.get(username = username)
-    try:
-        registered = Registered.objects.get(Name=username)
-        cart = Cart.objects.get(Name=username)
-        notregistered = notRegistered.objects.get(Name=username)
-    except Registered.DoesNotExist:
-        registered = Registered(Name=username, Accomodation=False)
-        registered.save()
-    except notRegistered.DoesNotExist:
-        notregistered = notRegistered(Name=username, Accomodation=True)
-        notregistered.save()
-        r = Event.objects.all()
-        for event in r:
-            notregistered.Events.add(event)
-    except Cart.DoesNotExist:
-        cart = Cart(Name=username, Accomodation=False)
-        cart.save()
+    person = Person.objects.get(Name=username)
+    if person.loggedin == True:
+        user = User.objects.get(username = username)
+        try:
+            registered = Registered.objects.get(Name=username)
+            cart = Cart.objects.get(Name=username)
+            notregistered = notRegistered.objects.get(Name=username)
+        except Registered.DoesNotExist:
+            registered = Registered(Name=username, Accomodation=False)
+            registered.save()
+        except notRegistered.DoesNotExist:
+            notregistered = notRegistered(Name=username, Accomodation=True)
+            notregistered.save()
+            r = Event.objects.all()
+            for event in r:
+                notregistered.Events.add(event)
+        except Cart.DoesNotExist:
+            cart = Cart(Name=username, Accomodation=False)
+            cart.save()
 
-    x = registered.Events.all()
-    if user.id != id:
-        raise Http404("Please login through the Register page..")
+        x = registered.Events.all()
+        if user.id != id:
+            raise Http404("Please login through the Register page..")
 
-    event = Event.objects.all()
+        event = Event.objects.all()
 
-    form = EventForm(username, instance=cart)
+        form = EventForm(username, instance=cart)
 
-    if request.method == 'POST' and 'print' in request.POST:
-        return HttpResponseRedirect(reverse("pdf", args=(username, user.id)))
+        if request.method == 'POST' and 'print' in request.POST:
+            return HttpResponseRedirect(reverse("pdf", args=(username, user.id)))
 
-    if request.method == 'POST' and 'cart' in request.POST:
-        return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
-
-    if request.method == 'POST':
-        form = EventForm(username, request.POST, instance=cart)
-        if form.is_valid():
-            form.save()
-            q = Cart.objects.filter(Name=username)
-            y = registered
-            y.Cart.set(q)
-            y.save()
-            messages.success(request, 'Items added to your cart. You are being redirected to the cart right now.')
+        if request.method == 'POST' and 'cart' in request.POST:
             return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
 
-    context = {
-        "user":user,
-        "event":event,
-        "form":form,
-        "cart":cart,
-        "x":x,
-        "registered":registered,
-    }
-    return render(request, "users/user.html", context)
+        if request.method == 'POST' and 'logout' in request.POST:
+            person = Person.objects.get(Name=username)
+            person.loggedin = False
+            person.save()
+            return HttpResponseRedirect(reverse("register"))
+
+        if request.method == 'POST':
+            form = EventForm(username, request.POST, instance=cart)
+            if form.is_valid():
+                form.save()
+                q = Cart.objects.filter(Name=username)
+                y = registered
+                y.Cart.set(q)
+                y.save()
+                messages.success(request, 'Items added to your cart. You are being redirected to the cart right now.')
+                return HttpResponseRedirect(reverse("cart", args=(username, user.id)))
+
+        context = {
+            "user":user,
+            "event":event,
+            "form":form,
+            "cart":cart,
+            "x":x,
+            "registered":registered,
+        }
+        return render(request, "users/user.html", context)
+    else:
+        raise Http404("Please login through the Register page..")
 
 def cart(request, username, id):
     user = User.objects.get(username = username)

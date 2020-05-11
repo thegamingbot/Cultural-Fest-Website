@@ -75,10 +75,10 @@
         <a href="#" id="scroll" style="display: none;"><span></span></a>
 
         <p class="Hi">Hi, {{user.username}}</p>
-        <a href="../" class="logout">Logout</a>
 
         <form method = POST class="Cart">
             {% csrf_token %}
+            <button class="btn btn-light" name = "logout"><p style="font-family: Chopsic; font-size: 20px;">LOG OUT</p></button>
             <button class="btn btn-light" name = "cart"><p style="font-family: Chopsic; font-size: 20px;">CART</p></button>
         </form>
 
