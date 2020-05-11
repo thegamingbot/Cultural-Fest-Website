@@ -35,7 +35,7 @@ def register(request):
         form1 = RegisterForm(request.POST)
         if form1.is_valid():
             form1.save()
-            username = form1.cleaned_data.get('username')
+            username=form1.cleaned_data['username']
             person = Person(Name = username, loggedin = False)
             person.save()
             cart = Cart(Name=username, Accomodation=False)
@@ -47,7 +47,14 @@ def register(request):
             r = Event.objects.all()
             for event in r:
                 notregistered.Events.add(event)
-            messages.success(request, 'Registered.. Voila!!')
+            new_user = authenticate(username=form1.cleaned_data['username'],
+                                    password=form1.cleaned_data['password1'],
+                                    )
+            login(request, new_user)
+            person.loggedin = True
+            person.save()
+            user = User.objects.get(username=username)
+            return HttpResponseRedirect(reverse("user", args=(username, user.id)))
     if request.method == "POST" and 'log_in' in request.POST:
         form2 = AuthenticationForm(request=request, data=request.POST)
         if form2.is_valid():
@@ -222,6 +229,6 @@ def genrate_pdf(request, username, id, *args, **kwargs):
     tomail = [user.email,]
     email = EmailMessage(subject, message, frommail, tomail)
     #email.attach_file("static/Images/bill.jpg")
-    email.attach_file("out.pdf")
+    email.attach_file("Invoice.pdf")
     email.send()
     return HttpResponse(pdf, content_type="application/pdf")
